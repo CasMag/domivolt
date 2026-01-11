@@ -1,0 +1,686 @@
+---
+// src/pages/index.astro
+// Esta es ahora tu Landing Page principal
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="DomiVolt - Servicios Eléctricos Profesionales" description="Servicios eléctricos profesionales en Monteagudo - Bolivia. Instalación, mantenimiento y emergencias 24/7.">
+    <header>
+        <nav>
+            <div class="logo">
+                
+                <a href="/" class="logo">
+                    <img src="/src/assets/logodomivolt.png" alt="DomiVolt Logo">
+                    DomiVolt</a>
+            </div>
+            <button class="hamburger" aria-label="Menú de navegación">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <!-- AQUÍ ESTÁ LA INTEGRACIÓN: Enlace a tu página de Trayectoria -->
+                <li><a href="/tecnicos">Tecnicos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Soluciones Eléctricas <span class="highlight">Profesionales</span></h1>
+                <p>Servicios Electricos Profesionales para tu Hogar y Negocio.<br> Monteagudo - Bolivia.</p>
+                <p>Emergencia  <span>24/7</span></p>
+                
+                <a href="https://wa.me/59178491525?text=Hola%20DomiVolt,%20quisiera%20solicitar%20un%20presupuesto%20gratis" 
+                   class="cta-button" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   Solicitar Presupuesto Gratis
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="/src/assets/voltimetro.png" alt="Servicios Eléctricos Profesionales">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2>Nuestros <span class="highlight">Servicios</span></h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 18px;">Soluciones integrales para hogar y pequeños negocios.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Instalaciones Eléctricas</h3>
+                    <p>Instalación completa de sistemas eléctricos residenciales, comerciales e industriales con garantía certificada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Revisiones periódicas para garantizar el funcionamiento óptimo y seguro de tus instalaciones eléctricas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚠️</div>
+                    <h3>Emergencias 24/7</h3>
+                    <p>Servicio de urgencias disponible todos los días del año. Respuesta rápida ante cualquier falla eléctrica.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/servicios" class="cta-button" style="background: transparent; border: 2px solid #FCA311; color: #FCA311;">Ver Todos los Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="nosotros">
+        <div class="container">
+            <h2>¿Por qué <span class="highlight">Elegirnos?</span></h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">10+</div>
+                    <div class="feature-text">Años de Experiencia</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">500+</div>
+                    <div class="feature-text">Proyectos Completados</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">100%</div>
+                    <div class="feature-text">Clientes Satisfechos</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">24/7</div>
+                    <div class="feature-text">Atención Continua para emergencias</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>Contáctanos <span class="highlight">Ahora</span></h2>
+            <p style="font-size: 18px; margin-bottom: 40px;">Solicita tu presupuesto sin compromiso. Te respondemos en menos de 2 horas.</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <strong>Llámanos</strong>
+                            <a href="tel:+59178491525" style="color: #E5E5E5; text-decoration: none;">+591 78491525</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <strong>Escríbenos</strong>
+                            info@domivolt.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <strong>Visítanos</strong>
+                            Monteagudo, Bolivia
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <a href="https://wa.me/59178491525?text=Hola%20DomiVolt,%20necesito%20mas%20informacion" 
+                           class="cta-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           Chat en WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Tu celular" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos Profesionales</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const links = document.querySelectorAll('.nav-links li');
+            const contactForm = document.querySelector('.contact-form');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+                hamburger.classList.toggle('toggle');
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    hamburger.classList.remove('toggle');
+                });
+            });
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Evita que la página se recargue
+                    
+                    const nombre = document.getElementById('nombre').value;
+                    const telefono = document.getElementById('telefono').value;
+                    const mensaje = document.getElementById('mensaje').value;
+                    
+                    const text = `Hola DomiVolt, soy ${nombre}.\nMi teléfono es: ${telefono}\nMensaje: ${mensaje}`;
+                    const encodedText = encodeURIComponent(text);
+                    
+                    window.open(`https://wa.me/59178491525?text=${encodedText}`, '_blank');
+                });
+            }
+        });
+    </script>
+</Layout>
+
+<style>
+    /* Estilos globales para esta página */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Evita que el header tape los títulos al navegar */
+    }
+
+    :global(body) {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #000000;
+        color: #E5E5E5;
+        overflow-x: hidden;
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+        padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2);
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--accent);
+        text-shadow: 0 0 20px rgba(245, 162, 1, 0.5);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    .logo img{
+        width: 80px;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: #E5E5E5;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #E5E5E5;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #000000 0%, #14213D 100%);
+        padding: 150px 20px 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(252, 163, 17, 0.15) 0%, transparent 70%);
+        top: -100px;
+        right: -100px;
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.3; }
+        50% { transform: scale(1.2); opacity: 0.5; }
+    }
+
+    .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        filter: drop-shadow(0 0 30px rgba(252, 163, 17, 0.2));
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+
+    h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        color: #FFFFFF;
+        line-height: 1.2;
+    }
+
+    .highlight {
+        color: #FCA311;
+        text-shadow: 0 0 30px rgba(252, 163, 17, 0.6);
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 40px;
+        color: #E5E5E5;
+    }
+    .hero span {
+        color: #FCA311;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #FCA311 0%, #e09510 100%);
+        color: #000000;
+        padding: 18px 45px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s;
+        box-shadow: 0 10px 30px rgba(252, 163, 17, 0.4);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(252, 163, 17, 0.6);
+    }
+
+    .services {
+        padding: 100px 20px;
+        background: #14213D;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #FFFFFF;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .service-card {
+        background: linear-gradient(135deg, #000000 0%, #14213D 100%);
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-color: #FCA311;
+        box-shadow: 0 20px 40px rgba(252, 163, 17, 0.3);
+    }
+
+    .service-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #FCA311;
+    }
+
+    .features {
+        padding: 100px 20px;
+        background: #000000;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    .feature-item {
+        text-align: center;
+    }
+
+    .feature-number {
+        font-size: 48px;
+        font-weight: bold;
+        color: #FCA311;
+        margin-bottom: 10px;
+        text-shadow: 0 0 20px rgba(252, 163, 17, 0.5);
+    }
+
+    .feature-text {
+        color: #E5E5E5;
+        font-size: 18px;
+    }
+
+    /* --- SECCIÓN CONTACTO --- */
+    .contact {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #14213D 0%, #000000 100%);
+        text-align: center;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .contact-info {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        font-size: 30px;
+        color: #FCA311;
+        width: 50px;
+        text-align: center;
+    }
+
+    .contact-text {
+        color: #E5E5E5;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-text strong {
+        color: #FCA311;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Formulario */
+    .contact-form-container {
+        flex: 1;
+        min-width: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(252, 163, 17, 0.3);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        color: #FCA311;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #FCA311;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 15px;
+        background: #FCA311;
+        color: #000;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .submit-button:hover {
+        background: #e09510;
+        transform: translateY(-2px);
+    }
+
+    /* --- STICKY WHATSAPP --- */
+    .sticky-whatsapp {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #25D366;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 2000;
+        transition: all 0.3s;
+        font-size: 18px;
+    }
+
+    .sticky-whatsapp:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+        background: #000000;
+        padding: 30px 20px;
+        text-align: center;
+        color: #E5E5E5;
+        border-top: 2px solid #14213D;
+    }
+
+    /* --- CORRECCIONES PARA MÓVIL --- */
+    @media (max-width: 768px) {
+        /* Ajuste de las letras principales (H1) */
+        h1 {
+            font-size: 36px; /* Reducido de 56px para que quepa en celular */
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        /* Menú Hamburguesa */
+        .hamburger {
+            display: block;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            position: fixed;
+            background: #000000;
+            height: 100vh;
+            width: 100%;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .nav-links.open {
+            transform: translateX(0%);
+        }
+
+        .nav-links li {
+            margin: 20px 0;
+        }
+
+        .nav-links a {
+            font-size: 24px;
+        }
+
+        .hero {
+            padding-top: 120px; /* Más espacio arriba para que no choque con el menú */
+        }
+
+        .hero-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero-content {
+            margin-bottom: 40px;
+        }
+        .hero-image{
+                display: none;
+        }
+        .contact-wrapper {
+            flex-direction: column;
+        }
+
+        /* Ajuste del pie de página */
+        footer p {
+            font-size: 14px;
+            padding: 0 10px; /* Margen lateral para que el texto no toque los bordes */
+        }
+
+        /* Animación del icono hamburguesa */
+        .hamburger.toggle .line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.toggle .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.toggle .line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
+</style>
