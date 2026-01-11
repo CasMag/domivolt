@@ -5,10 +5,10 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Servicios y Proceso - DomiVolt" description="Conoce nuestro proceso de trabajo, áreas de cobertura y servicios eléctricos detallados.">
     <header>
         <nav>
-            <div class="logo-container">
-            <img src="/src/assets/logodomivolt.png" alt="logo">
-            <a href="/" class="logo">DomiVolt</a>
-            </div>
+            <a href="/" class="logo">
+             <img src="/logodomivolt.png" alt="logo">
+                DomiVolt</a>
+    
             <button class="hamburger" aria-label="Menú de navegación">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -229,8 +229,8 @@ import Layout from '../layouts/Layout.astro';
         /* Header */
         header { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2); }
         nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo-container { display: flex; align-items: center; }
-        .logo-container img { width: 70px; margin-right: 10px; }
+        .logo { display: flex; align-items:right; }
+        .logo img { height: 35px;}
         .logo { font-size: 28px; font-weight: bold; color: var(--accent); text-decoration: none; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a { color: #E5E5E5; text-decoration: none; font-weight: 500; }

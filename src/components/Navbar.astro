@@ -4,6 +4,7 @@
 <nav class="navbar">
   <div class="container">
     <a href="/" class="logo">
+      <img src="/logodomivolt.png" alt="DomiVolt Logo">
       <span class="domi">Domi</span><span class="volt">Volt</span>
     </a>
     
@@ -32,12 +33,17 @@
     align-items: center;
     padding: 0 20px;
   }
-
+  
   .logo {
     font-size: 1.5rem;
     font-weight: 800;
     text-decoration: none;
     letter-spacing: 1px;
+    display: flex;
+    align-items: right;
+  }
+  .logo img {
+    height: 35px;
   }
 
   .domi { color: var(--white); }
@@ -72,7 +78,7 @@
   }
 
   /* Responsivo para celulares */
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     .nav-links li:not(:last-child) {
       display: none; /* Esconde los links de texto en móvil para simplificar */
     }

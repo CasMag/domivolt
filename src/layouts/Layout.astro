@@ -46,6 +46,13 @@ const socialImageURL = new URL(image, Astro.url);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Efecto de Rayos Global (Pure CSS) -->
+    <div class="storm-effect">
+        <div class="lightning l1"></div>
+        <div class="lightning l2"></div>
+        <div class="flash"></div>
+    </div>
+
     <slot />
     
     <!-- WhatsApp Float Button -->
@@ -163,5 +170,68 @@ const socialImageURL = new URL(image, Astro.url);
     .whatsapp-float:hover {
         transform: scale(1.1);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    /* --- ANIMACIÓN DE RAYOS (Pure CSS) --- */
+    .storm-effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* IMPORTANTE: Permite hacer clic en los botones debajo */
+        z-index: 50; /* Encima de los fondos, debajo del menú */
+        mix-blend-mode: screen; /* Se fusiona con tus gradientes (negro se vuelve transparente) */
+        overflow: hidden;
+    }
+
+    .lightning {
+        position: absolute;
+        top: -50px;
+        width: 100px;
+        height: 120vh;
+        background: #fff;
+        opacity: 0;
+        /* Forma más fina y afilada */
+        clip-path: polygon(48% 0%, 52% 0%, 50% 35%, 60% 35%, 48% 55%, 58% 55%, 45% 100%, 55% 55%, 45% 55%, 55% 35%, 45% 35%);
+        /* Doble resplandor: uno cian intenso y otro azul profundo para dar volumen */
+        filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #0077be);
+    }
+
+    .l1 {
+        left: 15%;
+        animation: strike 5s infinite;
+    }
+
+    .l2 {
+        right: 15%;
+        animation: strike 7s infinite 2s;
+        transform: scaleX(-1); /* Invertimos el rayo para que se vea diferente */
+    }
+
+    /* Destello ambiental sutil */
+    .flash {
+        position: absolute;
+        inset: 0;
+        background: white;
+        opacity: 0;
+        animation: ambient-flash 7s infinite;
+    }
+
+    @keyframes strike {
+        0% { opacity: 0; }
+        90% { opacity: 0; }
+        91% { opacity: 1; filter: brightness(2); } /* Destello inicial cegador */
+        92% { opacity: 0; }
+        93% { opacity: 0.8; } /* Réplica fuerte */
+        94% { opacity: 0; }
+        96% { opacity: 0.5; } /* Último chisporroteo */
+        100% { opacity: 0; }
+    }
+
+    @keyframes ambient-flash {
+        0%, 92% { opacity: 0; }
+        93% { opacity: 0.05; } /* Ilumina muy suavemente toda la pantalla */
+        94% { opacity: 0; }
     }
 </style>

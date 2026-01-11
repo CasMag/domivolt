@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="logo">
                 
                 <a href="/" class="logo">
-                    <img src="/src/assets/logodomivolt.png" alt="DomiVolt Logo">
+                    <img src="/logodomivolt.png" alt="DomiVolt Logo">
                     DomiVolt</a>
             </div>
             <button class="hamburger" aria-label="Menú de navegación">
@@ -43,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
                 </a>
             </div>
             <div class="hero-image">
-                <img src="/src/assets/voltimetro.png" alt="Servicios Eléctricos Profesionales">
+                <img src="/voltimetro.png" alt="Servicios Eléctricos Profesionales">
             </div>
         </div>
     </section>
@@ -600,9 +600,18 @@ import Layout from '../layouts/Layout.astro';
         color: #E5E5E5;
         border-top: 2px solid #14213D;
     }
+    /*--- CORRECCIONES PARA TABLET ---*/
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 42px;
+        }
+        h2 {
+            font-size: 32px;
+        }
+    }
 
     /* --- CORRECCIONES PARA MÓVIL --- */
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
         /* Ajuste de las letras principales (H1) */
         h1 {
             font-size: 36px; /* Reducido de 56px para que quepa en celular */
