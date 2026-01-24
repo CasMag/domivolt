@@ -9,8 +9,8 @@ interface Props {
 const { 
 	title, 
 	description = "DomiVolt - Servicios eléctricos profesionales en Monteagudo. Emergencias 24/7 e instalaciones para domicilios y empresas.",
-	image = "/assets/images/logodomivolt.png",
-	favicon = "/assets/images/logo.png"
+	image = "/logodomivolt.png",
+	favicon = "/favicon.png"
 } = Astro.props;
 
 // Aseguramos que la imagen tenga una URL absoluta para que las redes sociales la muestren correctamente
@@ -79,6 +79,53 @@ const socialImageURL = new URL(image, Astro.url);
         --text-dark: #333;
         --white: #ffffff;
         --bg-light: #f8f9fa;
+
+        /* --- Variables Semánticas (Adaptables) --- */
+        /* Por defecto (Modo Claro) */
+        --bg-body: var(--bg-light);
+        --text-main: var(--text-dark);
+        --header-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        --header-text: var(--white);
+        --hero-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        --hero-text: var(--white);
+        --section-title: var(--primary);
+        --services-bg: var(--white);
+        --card-bg: var(--bg-light);
+        --card-title: var(--primary);
+        --card-text: var(--text-dark);
+        --features-bg: var(--bg-light);
+        --features-text: var(--text-dark);
+        --contact-bg: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        --contact-text: var(--white);
+        --input-bg: rgba(255, 255, 255, 0.9);
+        --input-text: #333;
+        --footer-bg: var(--primary);
+        --footer-text: var(--text-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            /* Modo Oscuro (Override) */
+            --bg-body: #000000;
+            --text-main: #E5E5E5;
+            --header-bg: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+            --header-text: #E5E5E5;
+            --hero-bg: linear-gradient(135deg, #000000 0%, #14213D 100%);
+            --hero-text: #E5E5E5;
+            --section-title: #FFFFFF;
+            --services-bg: #14213D;
+            --card-bg: linear-gradient(135deg, #000000 0%, #14213D 100%);
+            --card-title: var(--accent);
+            --card-text: #E5E5E5;
+            --features-bg: #000000;
+            --features-text: #E5E5E5;
+            --contact-bg: linear-gradient(135deg, #14213D 0%, #000000 100%);
+            --contact-text: #E5E5E5;
+            --input-bg: rgba(0, 0, 0, 0.5);
+            --input-text: #fff;
+            --footer-bg: #000000;
+            --footer-text: #E5E5E5;
+        }
     }
 
     * {
@@ -94,7 +141,8 @@ const socialImageURL = new URL(image, Astro.url);
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
-        color: var(--text-dark);
+        color: var(--text-main);
+        background-color: var(--bg-body);
     }
 
     .container {
@@ -195,16 +243,16 @@ const socialImageURL = new URL(image, Astro.url);
         /* Forma más fina y afilada */
         clip-path: polygon(48% 0%, 52% 0%, 50% 35%, 60% 35%, 48% 55%, 58% 55%, 45% 100%, 55% 55%, 45% 55%, 55% 35%, 45% 35%);
         /* Doble resplandor: uno cian intenso y otro azul profundo para dar volumen */
-        filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #0077be);
+        filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #f4e815);
     }
 
     .l1 {
-        left: 15%;
+        left: 17%;
         animation: strike 5s infinite;
     }
 
     .l2 {
-        right: 15%;
+        right: 17%;
         animation: strike 7s infinite 2s;
         transform: scaleX(-1); /* Invertimos el rayo para que se vea diferente */
     }
@@ -215,7 +263,7 @@ const socialImageURL = new URL(image, Astro.url);
         inset: 0;
         background: white;
         opacity: 0;
-        animation: ambient-flash 7s infinite;
+        animation: ambient-flash 4s infinite;
     }
 
     @keyframes strike {
@@ -231,7 +279,7 @@ const socialImageURL = new URL(image, Astro.url);
 
     @keyframes ambient-flash {
         0%, 92% { opacity: 0; }
-        93% { opacity: 0.05; } /* Ilumina muy suavemente toda la pantalla */
-        94% { opacity: 0; }
+        93% { opacity: 0.08; } /* Ilumina muy suavemente toda la pantalla */
+        96% { opacity: 0; }
     }
 </style>

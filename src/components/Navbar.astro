@@ -79,8 +79,20 @@
 
   /* Responsivo para celulares */
   @media (max-width: 640px) {
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
     .nav-links li:not(:last-child) {
       display: none; /* Esconde los links de texto en móvil para simplificar */
+    }
+    .btn-nav {
+      font-size: 0,7rem;
+      padding: 5px 10px;
+    }
+    .logo {
+      font-size: 1.2rem;
     }
   }
 </style>

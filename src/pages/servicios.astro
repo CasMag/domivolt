@@ -34,6 +34,11 @@ import Layout from '../layouts/Layout.astro';
     <section class="services">
         <div class="container">
             <div class="services-grid">
+                 <div class="service-card">
+                    <div class="service-icon">⚠️</div>
+                    <h3>Emergencias 24/7</h3>
+                    <p>Servicio de urgencias disponible todos los días del año. Respuesta rápida ante cualquier falla eléctrica.</p>
+                </div>
                 <div class="service-card">
                     <div class="service-icon">🔌</div>
                     <h3>Instalaciones Eléctricas</h3>
@@ -43,11 +48,6 @@ import Layout from '../layouts/Layout.astro';
                     <div class="service-icon">🔧</div>
                     <h3>Mantenimiento Preventivo</h3>
                     <p>Revisiones periódicas para garantizar el funcionamiento óptimo y seguro de tus instalaciones eléctricas.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚠️</div>
-                    <h3>Emergencias 24/7</h3>
-                    <p>Servicio de urgencias disponible todos los días del año. Respuesta rápida ante cualquier falla eléctrica.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💡</div>
@@ -96,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/mantenimiento.webp" alt="Mantenimiento">
+                    <img src="/mantenimiento.jpg" alt="Mantenimiento">
                     <div class="gallery-info">
                         <h3>Mantenimiento</h3>
                         <p>Diagnóstico y reparación de fallas.</p>
@@ -199,7 +199,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <footer>
-        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos Profesionales</p>
+        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos Profesionales para tu Domicilio</p>
     </footer>
 
     <script>
@@ -248,7 +248,7 @@ import Layout from '../layouts/Layout.astro';
         .page-header p { font-size: 20px; color: #ccc; }
 
         /* Servicios Grid */
-        .services { padding: 60px 20px; background: #14213D; }
+        .services { padding: 60px 20px; background: #013C58; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .service-card { background: linear-gradient(135deg, #000000 0%, #14213D 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
         .service-card:hover { transform: translateY(-10px); border-color: #FCA311; }
@@ -304,7 +304,7 @@ import Layout from '../layouts/Layout.astro';
         .gallery-info p { color: #E5E5E5; font-size: 14px; margin: 0; }
 
         /* Proceso */
-        .process { padding: 100px 20px; background: #14213D; } /* Cambiado para alternar */
+        .process { padding: 100px 20px; background: #013C58; } /* Cambiado para alternar */
         .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 50px; }
         .step { padding: 20px; text-align: center; }
         .step-number { font-size: 40px; font-weight: 900; color: rgba(252, 163, 17, 0.2); margin-bottom: 10px; }
@@ -319,7 +319,7 @@ import Layout from '../layouts/Layout.astro';
         .pom-card h3 { color: #FFFFFF; margin-bottom: 10px; }
 
         /* Cobertura */
-        .coverage { padding: 100px 20px; background: #14213D; } /* Cambiado para alternar */
+        .coverage { padding: 100px 20px; background: #013C58; } /* Cambiado para alternar */
         .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-content: center; }
         .coverage-card { background: linear-gradient(135deg, #000000 0%, #14213D 100%); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #333; }
         .coverage-card.active { border-color: #FCA311; box-shadow: 0 0 15px rgba(252, 163, 17, 0.2); }

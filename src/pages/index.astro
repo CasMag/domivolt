@@ -31,8 +31,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1>Soluciones Eléctricas <span class="highlight">Profesionales</span></h1>
-                <p>Servicios Electricos Profesionales para tu Hogar y Negocio.<br> Monteagudo - Bolivia.</p>
+                <h1>Servicios Eléctricos <span class="highlight">Profesionales</span> para tu horgar y Negocio</h1>
                 <p>Emergencia  <span>24/7</span></p>
                 
                 <a href="https://wa.me/59178491525?text=Hola%20DomiVolt,%20quisiera%20solicitar%20un%20presupuesto%20gratis" 
@@ -41,9 +40,6 @@ import Layout from '../layouts/Layout.astro';
                    rel="noopener noreferrer">
                    Solicitar Presupuesto Gratis
                 </a>
-            </div>
-            <div class="hero-image">
-                <img src="/voltimetro.png" alt="Servicios Eléctricos Profesionales">
             </div>
         </div>
     </section>
@@ -159,7 +155,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <footer>
-        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos Profesionales</p>
+        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos para tus domicilios</p>
     </footer>
 
     <script>
@@ -285,8 +281,15 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .hero {
-        background: linear-gradient(135deg, #000000 0%, #14213D 100%);
-        padding: 150px 20px 100px;
+        /* Imagen de fondo (Asegúrate de tener esta imagen en tu carpeta public) */
+        background-image: url('/hero-electricidad.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
         overflow: hidden;
     }
@@ -294,51 +297,24 @@ import Layout from '../layouts/Layout.astro';
     .hero::before {
         content: '';
         position: absolute;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(252, 163, 17, 0.15) 0%, transparent 70%);
-        top: -100px;
-        right: -100px;
-        animation: pulse 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 0.3; }
-        50% { transform: scale(1.2); opacity: 0.5; }
-    }
-
-    .hero-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 50px;
-        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen para leer el texto */
         z-index: 1;
     }
 
-    .hero-content {
-        flex: 1;
-        max-width: 600px;
-    }
-
-    .hero-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero-image img {
+    .hero-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
         width: 100%;
-        max-width: 500px;
-        height: auto;
-        filter: drop-shadow(0 0 30px rgba(252, 163, 17, 0.2));
-        animation: float 6s ease-in-out infinite;
+        max-width: 900px;
     }
 
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
+    .hero-content {
+        margin: 0 auto;
     }
 
     h1 {
@@ -354,7 +330,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .hero p {
-        font-size: 20px;
+        font-size: 35px;
         margin-bottom: 40px;
         color: #E5E5E5;
     }
@@ -382,7 +358,7 @@ import Layout from '../layouts/Layout.astro';
 
     .services {
         padding: 100px 20px;
-        background: #14213D;
+        background: #013C54;
     }
 
     .container {
@@ -465,7 +441,7 @@ import Layout from '../layouts/Layout.astro';
     /* --- SECCIÓN CONTACTO --- */
     .contact {
         padding: 100px 20px;
-        background: linear-gradient(135deg, #14213D 0%, #000000 100%);
+        background: linear-gradient(135deg, #013C54 0%, #000000 100%);
         text-align: center;
     }
 
@@ -608,6 +584,10 @@ import Layout from '../layouts/Layout.astro';
         h2 {
             font-size: 32px;
         }
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
     }
 
     /* --- CORRECCIONES PARA MÓVIL --- */
@@ -655,20 +635,17 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .hero {
-            padding-top: 120px; /* Más espacio arriba para que no choque con el menú */
+            /* En móvil mantenemos el centrado pero aseguramos que el texto no choque con el header si la pantalla es muy pequeña */
+            padding-top: 80px; 
         }
 
         .hero-container {
-            flex-direction: column;
-            text-align: center;
+            padding: 0 20px;
+        }
+        .hero p{
+            font-size: 24px;
         }
 
-        .hero-content {
-            margin-bottom: 40px;
-        }
-        .hero-image{
-                display: none;
-        }
         .contact-wrapper {
             flex-direction: column;
         }
