@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Servicios y Proceso - DomiVolt" description="Conoce nuestro proceso de trabajo, áreas de cobertura y servicios eléctricos detallados.">
+<Layout title="Nuestros Servicios Eléctricos - DomiVolt" description="Explora todos nuestros servicios: emergencias 24/7, instalaciones, mantenimiento, iluminación LED, automatización y certificaciones oficiales.">
     <header>
         <nav>
             <a href="/" class="logo">
@@ -34,36 +34,78 @@ import Layout from '../layouts/Layout.astro';
     <section class="services">
         <div class="container">
             <div class="services-grid">
-                 <div class="service-card">
-                    <div class="service-icon">⚠️</div>
-                    <h3>Emergencias 24/7</h3>
-                    <p>Servicio de urgencias disponible todos los días del año. Respuesta rápida ante cualquier falla eléctrica.</p>
-                </div>
-                <div class="service-card">
+                 <article class="service-card">
+                        <div class="service-icon">⚠️</div>
+                        <h3>Emergencias 24/7</h3>
+                        <p>Atención inmediata para problemas eléctricos urgentes.</p>
+                        <ul class="service-list">
+                            <li>Cortos circuitos</li>
+                            <li>Apagones repentinos</li>
+                            <li>Fallas en instalaciones</li>
+                            <li>Problemas de seguridad eléctrica</li>
+                        </ul>
+                        <span class="service-schedule">Disponible 24/7</span>
+                    </article>
+                <article class="service-card">
                     <div class="service-icon">🔌</div>
                     <h3>Instalaciones Eléctricas</h3>
                     <p>Instalación completa de sistemas eléctricos residenciales, comerciales e industriales con garantía certificada.</p>
-                </div>
-                <div class="service-card">
+                    <ul class="service-list">
+                        <li>Cableado residencial</li>
+                        <li>Tableros eléctricos</li>
+                        <li>Acometidas nuevas</li>
+                        <li>Sistemas de puesta a tierra</li>
+                    </ul>
+                     <span class="service-schedule">Lunes a Viernes</span>
+                </article>
+                <article class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Mantenimiento Preventivo</h3>
                     <p>Revisiones periódicas para garantizar el funcionamiento óptimo y seguro de tus instalaciones eléctricas.</p>
-                </div>
-                <div class="service-card">
+                    <ul class="service-list">
+                        <li>Revisión de cargas</li>
+                        <li>Ajuste de conexiones</li>
+                        <li>Detección de fugas</li>
+                        <li>Limpieza de componentes</li>
+                    </ul>
+                    <span class="service-schedule">Lunes a Viernes</span>
+                </article>
+                <article class="service-card">
                     <div class="service-icon">💡</div>
                     <h3>Iluminación LED</h3>
                     <p>Actualización a sistemas de iluminación LED eficientes que reducen hasta un 80% el consumo eléctrico.</p>
-                </div>
-                <div class="service-card">
+                    <ul class="service-list">
+                        <li>Diseño de interiores</li>
+                        <li>Tiras LED y perfiles</li>
+                        <li>Sensores de movimiento</li>
+                        <li>Reducción de consumo</li>
+                    </ul>
+                    <span class="service-schedule">Lunes a Viernes</span>
+                </article>
+                <article class="service-card">
                     <div class="service-icon">🏠</div>
                     <h3>Automatización</h3>
                     <p>Instalación de sistemas domóticos para control inteligente de iluminación, climatización y seguridad.</p>
-                </div>
-                <div class="service-card">
+                    <ul class="service-list">
+                        <li>Control por voz</li>
+                        <li>Interruptores inteligentes</li>
+                        <li>Cámaras WiFi</li>
+                        <li>Programación de escenas</li>
+                    </ul>
+                    <span class="service-schedule">Lunes a Viernes</span>
+                </article>
+                <article class="service-card">
                     <div class="service-icon">📊</div>
                     <h3>Certificaciones</h3>
                     <p>Emisión de certificados eléctricos y boletines oficiales cumpliendo toda la normativa vigente.</p>
-                </div>
+                    <ul class="service-list">
+                        <li>Planos eléctricos</li>
+                        <li>Medición de puesta a tierra</li>
+                        <li>Firma de ingeniero</li>
+                        <li>Trámites oficiales</li>
+                    </ul>
+                    <span class="service-schedule">Lunes a Viernes</span>
+                </article>
             </div>
         </div>
     </section>
@@ -276,6 +318,17 @@ import Layout from '../layouts/Layout.astro';
             position: absolute;
             left: 0;
             color: #FCA311;
+        }
+
+        .service-schedule {
+            display: inline-block;
+            background: rgba(252, 163, 17, 0.2);
+            color: #FCA311;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 15px;
         }
 
         /* Galería */
