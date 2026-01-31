@@ -363,6 +363,7 @@ import Footer from '../components/Footer.astro';
     .container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 20px;
     }
 
     h2 {
@@ -591,6 +592,9 @@ import Footer from '../components/Footer.astro';
         h2 {
             font-size: 28px;
         }
+
+        /* Eliminar padding lateral de secciones para ganar ancho en móvil */
+        .services, .features, .contact { padding: 50px 0; }
 
         /* Reducir padding de tarjetas en móvil */
         .service-card {
