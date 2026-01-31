@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Nuestros Servicios Eléctricos - DomiVolt" description="Explora todos nuestros servicios: emergencias 24/7, instalaciones, mantenimiento, iluminación LED, automatización y certificaciones oficiales.">
     <header>
         <nav>
             <a href="/" class="logo">
-             <img src="/logodomivolt.png" alt="logo">
+             <img src="/logodomivolt.png" alt="DomiVolt Logo">
                 DomiVolt</a>
     
             <button class="hamburger" aria-label="Menú de navegación">
@@ -16,8 +17,7 @@ import Layout from '../layouts/Layout.astro';
             </button>
             <ul class="nav-links">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/servicios" style="color: var(--accent);">Servicios</a></li>
-                <li><a href="/tecnicos">Tecnico</a></li>
+                <li><a href="/tecnicos">Técnicos</a></li>
                 <li><a href="/#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="services">
         <div class="container">
             <div class="services-grid">
-                 <article class="service-card">
+                 <article class="service-card" tabindex="0">
                         <div class="service-icon">⚠️</div>
                         <h3>Emergencias 24/7</h3>
                         <p>Atención inmediata para problemas eléctricos urgentes.</p>
@@ -46,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
                         </ul>
                         <span class="service-schedule">Disponible 24/7</span>
                     </article>
-                <article class="service-card">
+                <article class="service-card" tabindex="0">
                     <div class="service-icon">🔌</div>
                     <h3>Instalaciones Eléctricas</h3>
                     <p>Instalación completa de sistemas eléctricos residenciales, comerciales e industriales con garantía certificada.</p>
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
                     </ul>
                      <span class="service-schedule">Lunes a Viernes</span>
                 </article>
-                <article class="service-card">
+                <article class="service-card" tabindex="0">
                     <div class="service-icon">🔧</div>
                     <h3>Mantenimiento Preventivo</h3>
                     <p>Revisiones periódicas para garantizar el funcionamiento óptimo y seguro de tus instalaciones eléctricas.</p>
@@ -70,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
                     </ul>
                     <span class="service-schedule">Lunes a Viernes</span>
                 </article>
-                <article class="service-card">
+                <article class="service-card" tabindex="0">
                     <div class="service-icon">💡</div>
                     <h3>Iluminación LED</h3>
                     <p>Actualización a sistemas de iluminación LED eficientes que reducen hasta un 80% el consumo eléctrico.</p>
@@ -82,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
                     </ul>
                     <span class="service-schedule">Lunes a Viernes</span>
                 </article>
-                <article class="service-card">
+                <article class="service-card" tabindex="0">
                     <div class="service-icon">🏠</div>
                     <h3>Automatización</h3>
                     <p>Instalación de sistemas domóticos para control inteligente de iluminación, climatización y seguridad.</p>
@@ -94,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
                     </ul>
                     <span class="service-schedule">Lunes a Viernes</span>
                 </article>
-                <article class="service-card">
+                <article class="service-card" tabindex="0">
                     <div class="service-icon">📊</div>
                     <h3>Certificaciones</h3>
                     <p>Emisión de certificados eléctricos y boletines oficiales cumpliendo toda la normativa vigente.</p>
@@ -212,12 +212,12 @@ import Layout from '../layouts/Layout.astro';
                     <span class="badge">✓ Activo Ahora</span>
                 </div>
                 <div class="coverage-card coming-soon">
-                    <h3> 📍 Muyupampa</h3>
+                    <h3>📍 Muyupampa</h3>
                     <p>Próxima expansión</p>
                     <span class="badge">Próximamente</span>
                 </div>
                 <div class="coverage-card coming-soon">
-                    <h3> 📍 Camiri</h3>
+                    <h3>📍 Camiri</h3>
                     <p>Próxima expansión</p>
                     <span class="badge">Próximamente</span>
                 </div>
@@ -227,8 +227,8 @@ import Layout from '../layouts/Layout.astro';
                     <span class="badge">Próximamente</span>
                 </div>
                 <div class="coverage-card coming-soon">
-                    <h3> 📍 Padilla</h3>
-                    <p>Proxima expansión</p>
+                    <h3>📍 Padilla</h3>
+                    <p>Próxima expansión</p>
                     <span class="badge">Próximamente</span>
                 </div>
                 <div class="coverage-card coming-soon">
@@ -240,9 +240,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos Profesionales para tu Domicilio</p>
-    </footer>
+    <Footer />
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -261,24 +259,23 @@ import Layout from '../layouts/Layout.astro';
         :global(body) { 
             font-family: 'Segoe UI', sans-serif; 
             background: #000000; 
-            color: #E5E5E5; 
+            color: var(--text-main); 
             overflow-x: hidden; 
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .highlight { color: #FCA311; text-shadow: 0 0 30px rgba(252, 163, 17, 0.6); }
-        h2 { font-size: 42px; text-align: center; margin-bottom: 60px; color: #FFFFFF; }
+        .highlight { color: var(--accent); text-shadow: 0 0 30px rgba(252, 163, 17, 0.6); }
+        h2 { font-size: 42px; text-align: center; margin-bottom: 60px; color: var(--white); }
 
         /* Header */
         header { background: linear-gradient(135deg, var(--primary) 0%, #000000 100%); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2); }
         nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo { display: flex; align-items:right; }
-        .logo img { height: 35px;}
-        .logo { font-size: 28px; font-weight: bold; color: var(--accent); text-decoration: none; }
+        .logo { display: flex; align-items: center; font-size: 28px; font-weight: bold; color: var(--accent); text-decoration: none; text-shadow: 0 0 20px rgba(245, 162, 1, 0.5); }
+        .logo img { width: 80px; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: #E5E5E5; text-decoration: none; font-weight: 500; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; }
         .nav-links a:hover { color: var(--accent); }
         .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 10px; }
-        .line { width: 25px; height: 3px; background-color: #E5E5E5; margin: 5px; transition: all 0.3s; }
+        .line { width: 25px; height: 3px; background-color: var(--text-main); margin: 5px; transition: all 0.3s; }
 
         /* Page Header (Hero pequeño) */
         .page-header {
@@ -286,16 +283,22 @@ import Layout from '../layouts/Layout.astro';
             background: linear-gradient(135deg, #000000 0%, #14213D 100%);
             text-align: center;
         }
-        .page-header h1 { font-size: 48px; color: white; margin-bottom: 20px; }
+        .page-header h1 { font-size: 48px; color: var(--white); margin-bottom: 20px; }
         .page-header p { font-size: 20px; color: #ccc; }
 
         /* Servicios Grid */
-        .services { padding: 60px 20px; background: #013C58; }
+        .services { padding: 40px 20px; background: var(--primary); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-card { background: linear-gradient(135deg, #000000 0%, #14213D 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
-        .service-card:hover { transform: translateY(-10px); border-color: #FCA311; }
+        .service-card { background: linear-gradient(135deg, #000000 0%, #14213D 100%); padding: 40px 20px; border-radius: 20px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
+        /* Efecto Hover, Focus y Active (Para Móvil) */
+        .service-card:hover, .service-card:focus, .service-card:active { 
+            transform: translateY(-5px); 
+            border-color: var(--accent); 
+            box-shadow: 0 0 25px rgba(252, 163, 17, 0.5); /* Brillo dorado */
+            outline: none; /* Quita el borde azul por defecto del navegador */
+        }
         .service-icon { font-size: 60px; margin-bottom: 20px; }
-        .service-card h3 { font-size: 24px; margin-bottom: 15px; color: #FCA311; }
+        .service-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--accent); }
         
         /* Estilos para la lista de problemas */
         .service-card ul {
@@ -317,13 +320,13 @@ import Layout from '../layouts/Layout.astro';
             content: "⚡";
             position: absolute;
             left: 0;
-            color: #FCA311;
+            color: var(--accent);
         }
 
         .service-schedule {
             display: inline-block;
             background: rgba(252, 163, 17, 0.2);
-            color: #FCA311;
+            color: var(--accent);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -349,45 +352,62 @@ import Layout from '../layouts/Layout.astro';
             transition: transform 0.3s ease;
         }
         .gallery-item:hover .gallery-info { transform: translateY(0); }
-        /* En móviles mostramos la info siempre para mejor UX */
-        @media (max-width: 768px) {
-            .gallery-info { transform: translateY(0); padding: 15px; }
-        }
-        .gallery-info h3 { color: #FCA311; font-size: 18px; margin-bottom: 5px; }
-        .gallery-info p { color: #E5E5E5; font-size: 14px; margin: 0; }
+        .gallery-info h3 { color: var(--accent); font-size: 18px; margin-bottom: 5px; }
+        .gallery-info p { color: var(--text-main); font-size: 14px; margin: 0; }
 
         /* Proceso */
-        .process { padding: 100px 20px; background: #013C58; } /* Cambiado para alternar */
+        .process { padding: 100px 20px; background: var(--primary); } /* Cambiado para alternar */
         .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 50px; }
         .step { padding: 20px; text-align: center; }
         .step-number { font-size: 40px; font-weight: 900; color: rgba(252, 163, 17, 0.2); margin-bottom: 10px; }
-        .step h3 { color: #FCA311; margin-bottom: 10px; font-size: 20px; }
+        .step h3 { color: var(--accent); margin-bottom: 10px; font-size: 20px; }
 
         /* Paz Mental */
         .peace-of-mind { padding: 100px 20px; background: #000000; } /* Cambiado para alternar */
         .pom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
         .pom-card { padding: 30px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 1px solid #333; transition: transform 0.3s; }
-        .pom-card:hover { transform: translateY(-5px); border-color: #FCA311; }
+        .pom-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .pom-icon { font-size: 40px; margin-bottom: 20px; }
-        .pom-card h3 { color: #FFFFFF; margin-bottom: 10px; }
+        .pom-card h3 { color: var(--white); margin-bottom: 10px; }
 
         /* Cobertura */
-        .coverage { padding: 100px 20px; background: #013C58; } /* Cambiado para alternar */
+        .coverage { padding: 100px 20px; background: var(--primary); } /* Cambiado para alternar */
         .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-content: center; }
         .coverage-card { background: linear-gradient(135deg, #000000 0%, #14213D 100%); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #333; }
-        .coverage-card.active { border-color: #FCA311; box-shadow: 0 0 15px rgba(252, 163, 17, 0.2); }
-        .coverage-card h3 { color: #FFFFFF; margin-bottom: 10px; font-size: 22px; }
+        .coverage-card.active { border-color: var(--accent); box-shadow: 0 0 15px rgba(252, 163, 17, 0.2); }
+        .coverage-card h3 { color: var(--white); margin-bottom: 10px; font-size: 22px; }
         .badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
-        .active .badge { background: rgba(252, 163, 17, 0.2); color: #FCA311; }
+        .active .badge { background: rgba(252, 163, 17, 0.2); color: var(--accent); }
         .coming-soon .badge { background: rgba(255, 255, 255, 0.1); color: #999; }
-
-        footer { background: #000000; padding: 30px 20px; text-align: center; color: #E5E5E5; border-top: 2px solid #14213D; }
 
         @media (max-width: 768px) {
             .hamburger { display: block; z-index: 1001; }
             .nav-links { position: fixed; background: #000000; height: 100vh; width: 100%; top: 0; left: 0; flex-direction: column; align-items: center; justify-content: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; z-index: 1000; }
             .nav-links.open { transform: translateX(0%); }
             .page-header { padding-top: 120px; }
+            .page-header h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+
+            /* En móviles mostramos la info de galería siempre para mejor UX */
+            .gallery-info { transform: translateY(0); padding: 15px; }
+
+            /* Ajustes de espaciado compactos para móvil */
+            .services, .gallery, .process, .peace-of-mind, .coverage { padding: 50px 20px; }
+            h2 { margin-bottom: 30px; }
+            
+            .services-grid, .pom-grid, .coverage-grid { gap: 20px; }
+            .service-card, .pom-card, .coverage-card { padding: 20px 15px; }
+
+            /* Animación del icono hamburguesa */
+            .hamburger.toggle .line:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .hamburger.toggle .line:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.toggle .line:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
         }
     </style>
 </Layout>

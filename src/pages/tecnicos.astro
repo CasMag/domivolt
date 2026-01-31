@@ -1,12 +1,30 @@
 ---
 // src/pages/trayectoria.astro
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import perfil from '../assets/perfil.png';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Casimiro Oropeza - Trayectoria DomiVolt">
-  <Navbar />
+<Layout title="Casimiro Oropeza - Ceo DomiVolt">
+  <header>
+      <nav>
+          <a href="/" class="logo">
+           <img src="/logodomivolt.png" alt="DomiVolt Logo">
+              DomiVolt</a>
+  
+          <button class="hamburger" aria-label="Menú de navegación">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+          </button>
+          <ul class="nav-links">
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/servicios">Servicios</a></li>
+              <li><a href="/#contacto">Contacto</a></li>
+          </ul>
+      </nav>
+  </header>
+
   <main class="trayectoria-container">
     
     <!-- Encabezado con identidad DomiVolt -->
@@ -75,9 +93,21 @@ import perfil from '../assets/perfil.png';
     </div>
 
   </main>
-  <footer>
-    <p>&copy; 2025 DomiVolt. Todos los derechos reservados.</p>
-  </footer>
+  <Footer />
+
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.querySelector('.hamburger');
+          const navLinks = document.querySelector('.nav-links');
+          
+          if(hamburger && navLinks) {
+              hamburger.addEventListener('click', () => {
+                  navLinks.classList.toggle('open');
+                  hamburger.classList.toggle('toggle');
+              });
+          }
+      });
+  </script>
 </Layout>
 
 <style is:global>
@@ -105,7 +135,7 @@ import perfil from '../assets/perfil.png';
   .trayectoria-container {
     max-width: 850px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 120px 20px 60px; /* Aumentado para que el header fijo no tape el título */
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     background: rgba(1, 60, 88, 0.6); /* Fondo semitransparente azulado */
@@ -219,15 +249,31 @@ import perfil from '../assets/perfil.png';
 
   @media (max-width: 600px) {
     h1 { font-size: 2rem; }
-    .timeline { margin-left: 10px; padding-left: 25px; }
-    .checkpoint::before { left: -34px; }
+    .timeline { margin-left: 0; padding-left: 20px; }
+    .checkpoint::before { left: -29px; } /* Ajustado para el nuevo padding */
+    .featured { padding: 20px; }
+    .cta-box { padding: 30px 20px; }
   }
 
-  footer {
-    background: var(--blue-dark);
-    color: var(--white);
-    text-align: center;
-    padding: 20px;
-    margin-top: 0;
+  /* Estilos del Header (Estandarizados) */
+  header { background: linear-gradient(135deg, var(--blue-dark) 0%, #000000 100%); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2); }
+  nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+  .logo { display: flex; align-items: center; font-size: 28px; font-weight: bold; color: var(--orange-primary); text-decoration: none; text-shadow: 0 0 20px rgba(245, 162, 1, 0.5); }
+  .logo img { width: 80px; }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: #E5E5E5; text-decoration: none; font-weight: 500; }
+  .nav-links a:hover { color: var(--orange-primary); }
+  .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 10px; }
+  .line { width: 25px; height: 3px; background-color: #E5E5E5; margin: 5px; transition: all 0.3s; }
+
+  @media (max-width: 768px) {
+      .hamburger { display: block; z-index: 1001; }
+      .nav-links { position: fixed; background: #000000; height: 100vh; width: 100%; top: 0; left: 0; flex-direction: column; align-items: center; justify-content: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; z-index: 1000; }
+      .nav-links.open { transform: translateX(0%); }
+      
+      /* Animación Hamburguesa */
+      .hamburger.toggle .line:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+      .hamburger.toggle .line:nth-child(2) { opacity: 0; }
+      .hamburger.toggle .line:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
   }
 </style>

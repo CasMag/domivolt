@@ -1,34 +1,102 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
 <footer>
-    <div class="footer-content">
-        <p><strong>DomiVolt - Servicios Eléctricos Profesionales</strong></p>
-        <p>Monteagudo, Bolivia | 📞 +591 78491525</p>
-        <div class="footer-divider"></div>
-        <p style="font-size: 0.9rem; opacity: 0.8;">
-            © 2025 DomiVolt. Todos los derechos reservados.
-        </p>
+    <div class="container">
+        <div class="footer-content">
+            <div class="brand-section">
+                <span class="footer-logo">DomiVolt</span>
+                <p>Soluciones eléctricas seguras y profesionales.</p>
+            </div>
+            
+            <div class="social-section">
+                <a href="https://wa.me/59167671818" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:info@domivolt.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        
+        <div class="copyright-section">
+            <p>&copy; {currentYear} DomiVolt. Todos los derechos reservados.</p>
+        </div>
     </div>
 </footer>
 
 <style>
     footer {
-        background: var(--primary);
-        color: white;
-        padding: 40px 20px 20px;
+        background: #000000;
+        border-top: 2px solid #14213D;
+        padding: 50px 0 20px;
+        color: #E5E5E5;
+        margin-top: auto;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .footer-logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #FCA311;
+        text-shadow: 0 0 15px rgba(252, 163, 17, 0.3);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .brand-section p {
+        color: #999;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .social-section {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-section a {
+        color: #E5E5E5;
+        font-size: 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .social-section a:hover {
+        background: #FCA311;
+        color: #000;
+        transform: translateY(-3px);
+    }
+
+    .copyright-section {
         text-align: center;
+        font-size: 0.9rem;
+        color: #666;
     }
 
-    .footer-content p {
-        margin-bottom: 10px;
-    }
-
-    .footer-divider {
-        height: 1px;
-        background: rgba(255,255,255,0.2);
-        margin: 20px 0;
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
     }
 </style>

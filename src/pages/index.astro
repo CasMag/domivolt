@@ -2,9 +2,10 @@
 // src/pages/index.astro
 // Esta es ahora tu Landing Page principal
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="DomiVolt: Electricista Profesional en Monteagudo | Emergencias 24/7" description="Servicios eléctricos profesionales en Monteagudo, Bolivia. Expertos en instalaciones, mantenimiento y emergencias 24/7 para tu hogar y negocio.">
+<Layout title="DomiVolt: Electricista Profesional en Monteagudo | Emergencias 24/7" description="Servicios eléctricos profesionales en Monteagudo - Bolivia. Expertos en instalaciones, mantenimiento y emergencias 24/7 para tu hogar y negocio.">
     <header>
         <nav>
             <div class="logo">
@@ -19,10 +20,10 @@ import Layout from '../layouts/Layout.astro';
                 <div class="line"></div>
             </button>
             <ul class="nav-links">
-                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <!-- AQUÍ ESTÁ LA INTEGRACIÓN: Enlace a tu página de Trayectoria -->
-                <li><a href="/tecnicos">Tecnicos</a></li>
+                <li><a href="/tecnicos">Técnicos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -66,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="/servicios" class="cta-button" style="background: transparent; border: 2px solid #FCA311; color: #FCA311;">Ver Todos los Servicios</a>
+                <a href="/servicios" class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Ver Todos los Servicios</a>
             </div>
         </div>
     </section>
@@ -106,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
                             <strong>Llámanos</strong>
-                            <a href="tel:+59167671818" style="color: #E5E5E5; text-decoration: none;">67671818</a>
+                            <a href="tel:+59167671818" style="color: var(--text-main); text-decoration: none;">67671818</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -154,9 +155,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 DomiVolt. Todos los derechos reservados. | Servicios Eléctricos para tus domicilios</p>
-    </footer>
+    <Footer />
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -210,8 +209,8 @@ import Layout from '../layouts/Layout.astro';
 
     :global(body) {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #000000;
-        color: #E5E5E5;
+        background: var(--bg-body);
+        color: var(--text-main);
         overflow-x: hidden;
     }
 
@@ -258,7 +257,7 @@ import Layout from '../layouts/Layout.astro';
     .line {
         width: 25px;
         height: 3px;
-        background-color: #E5E5E5;
+        background-color: var(--text-main);
         margin: 5px;
         transition: all 0.3s ease;
     }
@@ -270,7 +269,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .nav-links a {
-        color: #E5E5E5;
+        color: var(--text-main);
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
@@ -320,27 +319,27 @@ import Layout from '../layouts/Layout.astro';
     h1 {
         font-size: 56px;
         margin-bottom: 20px;
-        color: #FFFFFF;
+        color: var(--white);
         line-height: 1.2;
     }
 
     .highlight {
-        color: #FCA311;
+        color: var(--accent);
         text-shadow: 0 0 30px rgba(252, 163, 17, 0.6);
     }
 
     .hero p {
         font-size: 35px;
         margin-bottom: 40px;
-        color: #E5E5E5;
+        color: var(--text-main);
     }
     .hero span {
-        color: #FCA311;
+        color: var(--accent);
     }
 
     .cta-button {
         display: inline-block;
-        background: linear-gradient(135deg, #FCA311 0%, #e09510 100%);
+        background: linear-gradient(135deg, var(--accent) 0%, #e09510 100%);
         color: #000000;
         padding: 18px 45px;
         text-decoration: none;
@@ -358,7 +357,7 @@ import Layout from '../layouts/Layout.astro';
 
     .services {
         padding: 100px 20px;
-        background: #013C54;
+        background: var(--primary);
     }
 
     .container {
@@ -370,7 +369,7 @@ import Layout from '../layouts/Layout.astro';
         font-size: 42px;
         text-align: center;
         margin-bottom: 60px;
-        color: #FFFFFF;
+        color: var(--white);
     }
 
     .services-grid {
@@ -392,7 +391,7 @@ import Layout from '../layouts/Layout.astro';
 
     .service-card:hover {
         transform: translateY(-10px);
-        border-color: #FCA311;
+        border-color: var(--accent);
         box-shadow: 0 20px 40px rgba(252, 163, 17, 0.3);
     }
 
@@ -406,7 +405,7 @@ import Layout from '../layouts/Layout.astro';
     .service-card h3 {
         font-size: 24px;
         margin-bottom: 15px;
-        color: #FCA311;
+        color: var(--accent);
     }
 
     .features {
@@ -428,20 +427,20 @@ import Layout from '../layouts/Layout.astro';
     .feature-number {
         font-size: 48px;
         font-weight: bold;
-        color: #FCA311;
+        color: var(--accent);
         margin-bottom: 10px;
         text-shadow: 0 0 20px rgba(252, 163, 17, 0.5);
     }
 
     .feature-text {
-        color: #E5E5E5;
+        color: var(--text-main);
         font-size: 18px;
     }
 
     /* --- SECCIÓN CONTACTO --- */
     .contact {
         padding: 100px 20px;
-        background: linear-gradient(135deg, #013C54 0%, #000000 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
         text-align: center;
     }
 
@@ -472,20 +471,20 @@ import Layout from '../layouts/Layout.astro';
 
     .contact-icon {
         font-size: 30px;
-        color: #FCA311;
+        color: var(--accent);
         width: 50px;
         text-align: center;
     }
 
     .contact-text {
-        color: #E5E5E5;
+        color: var(--text-main);
         font-size: 18px;
         display: flex;
         flex-direction: column;
     }
 
     .contact-text strong {
-        color: #FCA311;
+        color: var(--accent);
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -507,7 +506,7 @@ import Layout from '../layouts/Layout.astro';
 
     .form-group label {
         display: block;
-        color: #FCA311;
+        color: var(--accent);
         margin-bottom: 8px;
         font-weight: bold;
     }
@@ -526,13 +525,13 @@ import Layout from '../layouts/Layout.astro';
     .form-group input:focus,
     .form-group textarea:focus {
         outline: none;
-        border-color: #FCA311;
+        border-color: var(--accent);
     }
 
     .submit-button {
         width: 100%;
         padding: 15px;
-        background: #FCA311;
+        background: var(--accent);
         color: #000;
         border: none;
         border-radius: 50px;
@@ -569,14 +568,6 @@ import Layout from '../layouts/Layout.astro';
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    footer {
-        background: #000000;
-        padding: 30px 20px;
-        text-align: center;
-        color: #E5E5E5;
-        border-top: 2px solid #14213D;
-    }
-    /*--- CORRECCIONES PARA TABLET ---*/
     @media (max-width: 768px) {
         h1 {
             font-size: 42px;
@@ -600,6 +591,12 @@ import Layout from '../layouts/Layout.astro';
         h2 {
             font-size: 28px;
         }
+
+        /* Reducir padding de tarjetas en móvil */
+        .service-card {
+            padding: 30px 25px;
+        }
+        .contact-form-container { padding: 25px; }
 
         /* Menú Hamburguesa */
         .hamburger {
@@ -648,12 +645,6 @@ import Layout from '../layouts/Layout.astro';
 
         .contact-wrapper {
             flex-direction: column;
-        }
-
-        /* Ajuste del pie de página */
-        footer p {
-            font-size: 14px;
-            padding: 0 10px; /* Margen lateral para que el texto no toque los bordes */
         }
 
         /* Animación del icono hamburguesa */
