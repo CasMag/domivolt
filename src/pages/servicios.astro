@@ -90,7 +90,6 @@ import Footer from '../components/Footer.astro';
                         <li>Control por voz</li>
                         <li>Interruptores inteligentes</li>
                         <li>Cámaras WiFi</li>
-                        <li>Programación de escenas</li>
                     </ul>
                     <span class="service-schedule">Lunes a Viernes</span>
                 </article>
@@ -102,7 +101,6 @@ import Footer from '../components/Footer.astro';
                         <li>Planos eléctricos</li>
                         <li>Medición de puesta a tierra</li>
                         <li>Firma de ingeniero</li>
-                        <li>Trámites oficiales</li>
                     </ul>
                     <span class="service-schedule">Lunes a Viernes</span>
                 </article>
@@ -226,16 +224,6 @@ import Footer from '../components/Footer.astro';
                     <p>Próxima expansión</p>
                     <span class="badge">Próximamente</span>
                 </div>
-                <div class="coverage-card coming-soon">
-                    <h3>📍 Padilla</h3>
-                    <p>Próxima expansión</p>
-                    <span class="badge">Próximamente</span>
-                </div>
-                <div class="coverage-card coming-soon">
-                    <h3>📍 Sucre</h3>
-                    <p>Próxima expansión</p>
-                    <span class="badge">Próximamente</span>
-                </div>
             </div>
         </div>
     </section>
@@ -259,7 +247,7 @@ import Footer from '../components/Footer.astro';
         :global(body) { 
             font-family: 'Segoe UI', sans-serif; 
             background: #000000; 
-            color: var(--text-main); 
+            color: var(--white); 
             overflow-x: hidden; 
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -272,10 +260,10 @@ import Footer from '../components/Footer.astro';
         .logo { display: flex; align-items: center; font-size: 28px; font-weight: bold; color: var(--accent); text-decoration: none; text-shadow: 0 0 20px rgba(245, 162, 1, 0.5); }
         .logo img { width: 80px; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; }
         .nav-links a:hover { color: var(--accent); }
         .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 10px; }
-        .line { width: 25px; height: 3px; background-color: var(--text-main); margin: 5px; transition: all 0.3s; }
+        .line { width: 25px; height: 3px; background-color: var(--white); margin: 5px; transition: all 0.3s; }
 
         /* Page Header (Hero pequeño) */
         .page-header {
@@ -353,7 +341,7 @@ import Footer from '../components/Footer.astro';
         }
         .gallery-item:hover .gallery-info { transform: translateY(0); }
         .gallery-info h3 { color: var(--accent); font-size: 18px; margin-bottom: 5px; }
-        .gallery-info p { color: var(--text-main); font-size: 14px; margin: 0; }
+        .gallery-info p { color: var(--white); font-size: 14px; margin: 0; }
 
         /* Proceso */
         .process { padding: 100px 20px; background: var(--primary); } /* Cambiado para alternar */

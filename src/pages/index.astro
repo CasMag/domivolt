@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="DomiVolt: Electricista Profesional en Monteagudo | Emergencias 24/7" description="Servicios eléctricos profesionales en Monteagudo - Bolivia. Expertos en instalaciones, mantenimiento y emergencias 24/7 para tu hogar y negocio.">
+<Layout title="DomiVolt: Electricista Profesional en Monteagudo | Emergencias 24/7" description="Domivolt ofrece servicios de electricista en Monteagudo - Chuquisaca. Instalaciones eléctricas, reparación de cortocircuitos y mantenimiento domiciliario profesional.">
     <header>
         <nav>
             <div class="logo">
@@ -33,7 +33,10 @@ import Footer from '../components/Footer.astro';
         <div class="container hero-container">
             <div class="hero-content">
                 <h1>Servicios Eléctricos <span class="highlight">Profesionales</span> para tu horgar y Negocio</h1>
-                <p style="font-size: 1.1rem;">⚡ Emergencias 24/7 | 🔧 Instalaciones Profesionales</p>
+                <div class="hero-badges">
+                    <span class="emergency-badge">⚡ Emergencias 24/7</span>
+                    <span class="service-badge">🔧 Instalaciones Profesionales</span>
+                </div>
                 
                 <a href="https://wa.me/59167671818?text=Hola%20DomiVolt,%20quisiera%20solicitar%20un%20presupuesto%20gratis" 
                    class="cta-button" 
@@ -48,7 +51,7 @@ import Footer from '../components/Footer.astro';
     <section class="services" id="servicios">
         <div class="container">
             <h2>Nuestros <span class="highlight">Servicios</span></h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 18px;">Soluciones integrales para hogar y pequeños negocios.</p>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 18px; color: var(--white);">Soluciones integrales para hogar y pequeños negocios.</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🔌</div>
@@ -96,10 +99,42 @@ import Footer from '../components/Footer.astro';
         </div>
     </section>
 
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas <span class="highlight">Frecuentes</span></h2>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>¿Cuánto cuesta un electricista en Monteagudo?</summary>
+                    <p>El costo depende de la complejidad del trabajo. Sin embargo, en DomiVolt ofrecemos <strong>presupuestos gratuitos</strong> y sin compromiso. Contáctanos por WhatsApp o llámanos para evaluar tu caso y darte un precio justo.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuándo debo cambiar un tablero eléctrico?</summary>
+                    <p>Se recomienda cambiarlo si tiene más de 20 años, si usa fusibles antiguos, si escuchas zumbidos, si los interruptores saltan frecuentemente o si notas olor a quemado. Un tablero moderno es vital para la seguridad de tu hogar.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué hacer si hay un cortocircuito?</summary>
+                    <p>Primero, mantén la calma y baja la llave general o el breaker principal. Desconecta los aparatos afectados y no intentes repararlo tú mismo si no tienes experiencia. Llámanos de inmediato a nuestro servicio de <strong>Emergencias 24/7</strong>.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué métodos de pago aceptan?</summary>
+                    <p>Para tu comodidad, aceptamos pagos en <strong>efectivo, transferencias bancarias y pagos por QR</strong>. Emitimos recibo o factura según lo necesites.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Ofrecen garantía por sus trabajos?</summary>
+                    <p>Sí, absolutamente. Todos nuestros servicios cuentan con <strong>garantía de satisfacción</strong>. Si surge algún inconveniente relacionado con nuestra instalación, lo solucionamos sin costo adicional.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Realizan trabajos pequeños?</summary>
+                    <p>¡Claro que sí! Ningún trabajo es demasiado pequeño. Desde cambiar un tomacorriente o una ducha hasta instalaciones completas, estamos listos para ayudarte.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contacto">
         <div class="container">
             <h2>Contáctanos <span class="highlight">Ahora</span></h2>
-            <p style="font-size: 18px; margin-bottom: 40px;">Solicita tu presupuesto sin compromiso. Te respondemos en menos de 2 horas.</p>
+            <p style="font-size: 18px; margin-bottom: 40px; color: var(--white);">Solicita tu presupuesto sin compromiso. Te respondemos en menos de 2 horas.</p>
             
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -107,7 +142,7 @@ import Footer from '../components/Footer.astro';
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
                             <strong>Llámanos</strong>
-                            <a href="tel:+59167671818" style="color: var(--text-main); text-decoration: none;">67671818</a>
+                            <a href="tel:+59167671818" style="color: var(--white); text-decoration: none;">67671818</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -151,6 +186,19 @@ import Footer from '../components/Footer.astro';
                         <button type="submit" class="submit-button">Enviar Mensaje</button>
                     </form>
                 </div>
+            </div>
+
+            <!-- Mapa de Ubicación -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15026.867277977824!2d-63.9545634!3d-19.8080564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1a63055555555%3A0xf026607623329666!2sMonteagudo%2C%20Bolivia!5e0!3m2!1ses-419!2sbo" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
@@ -257,7 +305,7 @@ import Footer from '../components/Footer.astro';
     .line {
         width: 25px;
         height: 3px;
-        background-color: var(--text-main);
+        background-color: var(--white);
         margin: 5px;
         transition: all 0.3s ease;
     }
@@ -269,7 +317,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .nav-links a {
-        color: var(--text-main);
+        color: var(--white);
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
@@ -328,11 +376,43 @@ import Footer from '../components/Footer.astro';
         text-shadow: 0 0 30px rgba(252, 163, 17, 0.6);
     }
 
-    .hero p {
-        font-size: 35px;
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
         margin-bottom: 40px;
-        color: var(--text-main);
     }
+
+    .hero-badges span {
+        font-size: 18px;
+        padding: 10px 25px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .emergency-badge {
+        background-color: #d90429; /* Rojo intenso para alerta */
+        color: #ffffff !important; /* Forzamos blanco */
+        box-shadow: 0 0 20px rgba(217, 4, 41, 0.6);
+        animation: pulse-badge 2s infinite;
+    }
+
+    .service-badge {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff !important;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 4, 41, 0.7); }
+        70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(217, 4, 41, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 4, 41, 0); }
+    }
+
     .hero span {
         color: var(--accent);
     }
@@ -409,6 +489,10 @@ import Footer from '../components/Footer.astro';
         color: var(--accent);
     }
 
+    .service-card p {
+        color: #e0e0e0;
+    }
+
     .features {
         padding: 100px 20px;
         background: #000000;
@@ -434,8 +518,75 @@ import Footer from '../components/Footer.astro';
     }
 
     .feature-text {
-        color: var(--text-main);
+        color: var(--white);
         font-size: 18px;
+    }
+
+    /* --- FAQ SECTION --- */
+    .faq {
+        padding: 100px 20px;
+        background: linear-gradient(180deg, #000000 0%, var(--primary) 100%);
+    }
+
+    .faq-grid {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .faq-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq-item[open] {
+        border-color: var(--accent);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    summary {
+        padding: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+        color: var(--white);
+        list-style: none; /* Oculta el triángulo por defecto */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    summary::-webkit-details-marker {
+        display: none; /* Para Chrome/Safari */
+    }
+
+    summary::after {
+        content: '+';
+        font-size: 24px;
+        content: '\25BC'; /* Código Unicode para flecha hacia abajo (▼) */
+        font-size: 20px;
+        color: var(--accent);
+        font-weight: bold;
+        transition: transform 0.3s;
+    }
+
+    details[open] summary::after {
+        transform: rotate(45deg); /* Convierte el + en una x */
+        transform: rotate(180deg); /* Gira la flecha hacia arriba */
+    }
+
+    .faq-item p {
+        padding: 0 20px 25px 20px;
+        color: #e0e0e0;
+        line-height: 1.6;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 0;
+        padding-top: 15px;
     }
 
     /* --- SECCIÓN CONTACTO --- */
@@ -478,7 +629,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .contact-text {
-        color: var(--text-main);
+        color: var(--white);
         font-size: 18px;
         display: flex;
         flex-direction: column;
@@ -489,6 +640,14 @@ import Footer from '../components/Footer.astro';
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    .map-container {
+        margin-top: 50px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #333;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     /* Formulario */
