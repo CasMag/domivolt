@@ -158,29 +158,15 @@ import Footer from '../components/Footer.astro';
                         </div>
                     </div>
 
-                    <!-- Mapa de Ubicación movido aquí -->
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15026.867277977824!2d-63.9545634!3d-19.8080564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1a63055555555%3A0xf026607623329666!2sMonteagudo%2C%20Bolivia!5e0!3m2!1ses-419!2sbo" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-
-                    <div style="margin-top: 30px; text-align: center;">
+                    <div style="margin-top: 10px; text-align: center;">
                         <a href="https://wa.me/59167671818?text=Hola%20DomiVolt,%20necesito%20mas%20informacion" 
-                           class="cta-button"
+                           class="cta-button" 
                            target="_blank"
                            rel="noopener noreferrer">
                            Chat en WhatsApp
                         </a>
                     </div>
                 </div>
-
                 <div class="contact-form-container">
                     <form class="contact-form">
                         <div class="form-group">
@@ -198,6 +184,19 @@ import Footer from '../components/Footer.astro';
                         <button type="submit" class="submit-button">Enviar Mensaje</button>
                     </form>
                 </div>
+            </div>
+
+            <!-- Mapa de Ubicación - Restaurado a su posición de ancho completo debajo -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15026.867277977824!2d-63.9545634!3d-19.8080564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1a63055555555%3A0xf026607623329666!2sMonteagudo%2C%20Bolivia!5e0!3m2!1ses-419!2sbo" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
@@ -645,11 +644,14 @@ import Footer from '../components/Footer.astro';
     }
 
     .map-container {
-        margin-top: 20px;
+        margin-top: 50px;
         border-radius: 20px;
         overflow: hidden;
         border: 1px solid #333;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Formulario */
