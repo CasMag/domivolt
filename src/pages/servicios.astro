@@ -115,28 +115,28 @@ import Footer from '../components/Footer.astro';
             <p style="text-align: center; margin-bottom: 40px; color: #ccc; font-size: 18px;">Calidad y precisión en cada instalación.</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="/tablero.png" alt="Instalación de Tableros">
+                    <img src="/tablero.png" alt="Instalación de Tableros" loading="lazy">
                     <div class="gallery-info">
                         <h3>Tableros Industriales</h3>
                         <p>Montaje y peinado de cables certificado.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/iluminacionled.webp" alt="Iluminación LED">
+                    <img src="/iluminacionled.webp" alt="Iluminación LED" loading="lazy">
                     <div class="gallery-info">
                         <h3>Iluminación LED</h3>
                         <p>Proyectos de eficiencia energética.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/cableado.jpg" alt="Instalación Domiciliaria">
+                    <img src="/cableado.jpg" alt="Instalación Domiciliaria" loading="lazy">
                     <div class="gallery-info">
                         <h3>Residencial</h3>
                         <p>Cableado seguro para viviendas nuevas.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/mantenimiento.jpg" alt="Mantenimiento">
+                    <img src="/mantenimiento.jpg" alt="Mantenimiento" loading="lazy">
                     <div class="gallery-info">
                         <h3>Mantenimiento</h3>
                         <p>Diagnóstico y reparación de fallas.</p>
@@ -232,24 +232,27 @@ import Footer from '../components/Footer.astro';
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger') as HTMLElement;
+            const navLinks = document.querySelector('.nav-links') as HTMLElement;
+            const links = document.querySelectorAll('.nav-links a');
             
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('open');
-                hamburger.classList.toggle('toggle');
-            });
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('open');
+                    hamburger.classList.toggle('toggle');
+                });
+
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks?.classList.remove('open');
+                        hamburger?.classList.remove('toggle');
+                    });
+                });
+            }
         });
     </script>
 
     <style>
-        /* Estilos Base copiados de index.astro para consistencia */
-        :global(body) { 
-            font-family: 'Segoe UI', sans-serif; 
-            background: #000000; 
-            color: var(--white); 
-            overflow-x: hidden; 
-        }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .highlight { color: var(--accent); text-shadow: 0 0 30px rgba(252, 163, 17, 0.6); }
         h2 { font-size: 42px; text-align: center; margin-bottom: 60px; color: var(--white); }
