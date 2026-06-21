@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 interface Props {
 	title: string;
 	description?: string;
@@ -8,7 +9,7 @@ interface Props {
 
 const { 
 	title, 
-	description = "DomiVolt - Servicios eléctricos profesionales en Monteagudo. Emergencias 24/7 e instalaciones para domicilios y empresas.",
+	description = "DomiVolt - Servicios eléctricos domiciliarios profesionales en Monteagudo. Emergencias 24/7 e instalaciones nuevas y modernas, mantenimiento preventivo y correctivo.",
 	image = "/logodomivolt.png",
 	favicon = "/logodomivolt.png"
 } = Astro.props;
@@ -47,6 +48,11 @@ const socialImageURL = new URL(image, Astro.url);
     <link rel="shortcut icon" href={favicon} type="image/png" />
     <link rel="apple-touch-icon" href={favicon} />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- MD3 Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet" />
+    <ClientRouter />
 </head>
 <body>
     <!-- Efecto de Rayos Global (Pure CSS) -->
@@ -74,12 +80,36 @@ const socialImageURL = new URL(image, Astro.url);
 
 <style is:global>
     :root {
-        --primary: #013C58;
-        --secondary: #00537A;
-        --accent: #F5A201;
+        /* Typography Tokens */
+        --md-font-sans: 'Barlow', sans-serif;
+        --md-font-condensed: 'Barlow Condensed', sans-serif;
+
+        /* MD3 Inspired Palette - Light Mode */
+        --primary: #02142A;
+        --secondary: #4D616C;
+        --accent: #FE6802; 
         --accent-light: #FFD35B;
-        --text-light: #A8E8F9;
-        --text-dark: #333;
+
+        /* MD3 Color Tokens */
+        --md-primary: var(--accent);
+        --md-on-primary: #ffffff;
+        --md-tertiary: #00BD68; /* Verde vibrante para servicios ecológicos */
+        --md-on-tertiary: #ffffff; /* Texto blanco sobre terciario */
+        --md-secondary: #02142A;
+        --md-surface-container: #F0F4F7;
+        --md-surface-variant: #DEE3E9;
+        --md-on-surface: #191C1E;
+        --md-on-surface-variant: #41484D;
+        --md-outline: #71787D;
+        --md-outline-variant: #C1C7CE;
+
+        /* MD3 Shape & Elevation */
+        --shape-sm: 4px;
+        --shape-md: 12px;
+        --shape-lg: 16px;
+        --shape-xl: 28px;
+        --elev-2: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);
+
         --white: #ffffff;
         --bg-light: #f8f9fa;
 
@@ -108,26 +138,25 @@ const socialImageURL = new URL(image, Astro.url);
 
     @media (prefers-color-scheme: dark) {
         :root {
-            /* Modo Oscuro (Override) */
-            --bg-body: #000000;
-            --text-main: #E5E5E5;
-            --header-bg: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
-            --header-text: #E5E5E5;
-            --hero-bg: linear-gradient(135deg, #000000 0%, #14213D 100%);
-            --hero-text: #E5E5E5;
-            --section-title: #FFFFFF;
-            --services-bg: #14213D;
-            --card-bg: linear-gradient(135deg, #000000 0%, #14213D 100%);
-            --card-title: var(--accent);
-            --card-text: #E5E5E5;
-            --features-bg: #000000;
-            --features-text: #E5E5E5;
-            --contact-bg: linear-gradient(135deg, #14213D 0%, #000000 100%);
-            --contact-text: #E5E5E5;
-            --input-bg: rgba(0, 0, 0, 0.5);
-            --input-text: #fff;
-            --footer-bg: #000000;
-            --footer-text: #E5E5E5;
+            /* MD3 Inspired Palette - Dark Mode */
+            --md-primary: var(--accent);
+            --md-on-primary: #000000;
+            --md-tertiary: #00E676; /* Verde más brillante para dark mode */
+            --md-on-tertiary: #000000; /* Texto negro sobre terciario */
+            --md-secondary: #8AD9F6;
+            --md-surface-container: #1D2023;
+            --md-surface-variant: #41484D;
+            --md-on-surface: #E1E2E4;
+            --md-on-surface-variant: #C1C7CE;
+            --md-outline: #8B9297;
+            --md-outline-variant: #41484D;
+
+            --bg-body: #191C1E;
+            --text-main: var(--md-on-surface);
+            --services-bg: #1A1C1E;
+            --card-bg: #23272A;
+            --features-bg: #111416;
+            --contact-bg: linear-gradient(135deg, #001F2A 0%, #000000 100%);
         }
     }
 
@@ -142,10 +171,15 @@ const socialImageURL = new URL(image, Astro.url);
     }
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: var(--md-font-sans);
         line-height: 1.6;
         color: var(--text-main);
         background-color: var(--bg-body);
+    }
+
+    h1, h2, h3, h4, h5, h6, .btn {
+        font-family: var(--md-font-condensed);
+        letter-spacing: 0.02em;
     }
 
     .container {

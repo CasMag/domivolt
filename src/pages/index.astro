@@ -2,38 +2,19 @@
 // src/pages/index.astro
 // Esta es ahora tu Landing Page principal
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="DomiVolt: Electricista Profesional en Monteagudo | Emergencias 24/7" description="Domivolt ofrece servicios de electricista en Monteagudo - Chuquisaca. Instalaciones eléctricas, reparación de cortocircuitos y mantenimiento domiciliario profesional.">
-    <header>
-        <nav>
-            <a href="/" class="logo">
-                <img src="/logodomivolt.png" alt="DomiVolt Logo">
-                DomiVolt
-            </a>
-            <button class="hamburger" aria-label="Menú de navegación">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <!-- AQUÍ ESTÁ LA INTEGRACIÓN: Enlace a tu página de Trayectoria -->
-                <li><a href="/tecnicos">Técnicos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <Header />
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1>Servicios Eléctricos <span class="highlight">Profesionales</span> para tu hogar y Negocio</h1>
+                <h1>Servicios Eléctricos <span class="highlight typewriter" data-words='["Sostenibles", "Profesionales", "Seguros", "Garantizados"]'>Sostenibles</span> para tu hogar y Negocio</h1>
                 <div class="hero-badges">
                     <span class="emergency-badge">⚡ Emergencias 24/7</span>
-                    <span class="service-badge">🔧 Instalaciones Profesionales</span>
+                    <span class="service-badge tertiary-badge">🌱 Energía Solar y Ahorro</span>
                 </div>
                 
                 <a href="https://wa.me/59167671818?text=Hola%20DomiVolt,%20quisiera%20solicitar%20un%20presupuesto%20gratis" 
@@ -46,53 +27,191 @@ import Footer from '../components/Footer.astro';
         </div>
     </section>
 
-    <section class="services" id="servicios">
+    <section class="services" id="soluciones">
         <div class="container">
-            <h2>Nuestros <span class="highlight">Servicios</span></h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 18px; color: var(--white);">Soluciones integrales para hogar y pequeños negocios.</p>
+            <h2>Soluciones <span class="highlight">Eléctricas</span> Profesionales</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 18px; color: var(--md-on-surface);">Ingeniería y precisión aplicadas a instalaciones residenciales y comerciales.</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🔌</div>
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">electrical_services</span>
+                    </div>
                     <h3>Instalaciones Eléctricas</h3>
                     <p>Instalación completa de sistemas eléctricos residenciales, comerciales e industriales con garantía certificada.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">build</span>
+                    </div>
                     <h3>Mantenimiento Preventivo</h3>
                     <p>Revisiones periódicas para garantizar el funcionamiento óptimo y seguro de tus instalaciones eléctricas.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">⚠️</div>
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">bolt</span>
+                    </div>
                     <h3>Emergencias 24/7</h3>
                     <p>Servicio de urgencias disponible todos los días del año. Respuesta rápida ante cualquier falla eléctrica.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="/servicios" class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Ver Todos los Servicios</a>
+                <a href="#especialidades" class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Ver Servicios Especializados</a>
             </div>
         </div>
     </section>
 
-    <section class="features" id="nosotros">
+    <!-- SECCIÓN DE SERVICIOS ESPECIALIZADOS (COMPLEMENTARIOS) -->
+    <section class="complementary-services" id="especialidades">
         <div class="container">
-            <h2>¿Por qué <span class="highlight">Elegirnos?</span></h2>
+            <h2 style="margin-bottom: 20px;">Servicios <span class="highlight">Especializados complementarios</span></h2>
+            <p style="text-align: center; margin-bottom: 50px; color: var(--md-on-surface-variant);">Tecnología avanzada para modernizar y proteger tu espacio.</p>
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">videocam</span>
+                    </div>
+                    <h3>Cámaras de Seguridad</h3>
+                    <p>Sistemas de vigilancia IP y análogas con monitoreo remoto desde tu celular.</p>
+                </div>
+                <div class="comp-card">
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">lan</span>
+                    </div>
+                    <h3>Redes y Fibra Óptica</h3>
+                    <p>Instalación de puntos de red, cableado estructurado y fusión de fibra.</p>
+                </div>
+                <div class="comp-card">
+                    <div class="service-icon-wrap">
+                        <span class="material-symbols-rounded">satellite_alt</span>
+                    </div>
+                    <h3>Internet Starlink</h3>
+                    <p>Instalación profesional y configuración de kits satelitales en campo o ciudad.</p>
+                </div>
+                <div class="comp-card">
+                    <div class="service-icon-wrap" style="background: rgba(0, 109, 59, 0.1);">
+                        <span class="material-symbols-rounded" style="color: var(--md-tertiary);">solar_power</span>
+                    </div>
+                    <h3 style="color: var(--md-tertiary);">Energía Solar y Autoconsumo</h3>
+                    <p>Produce tu propia electricidad, vende lo que te sobre a la red y reduce tu factura hasta un 80%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE MODERNIZACIÓN LEY 2026 -->
+    <section class="modernization reveal" id="modernizacion">
+      <div class="container">
+        <div class="modern-grid">
+          <div class="modern-info">
+            <div class="section-label">
+              <span class="material-symbols-rounded">upgrade</span>
+              Tecnología y Eficiencia
+            </div>
+            <h2 style="text-align: left; margin-bottom: 20px;">Moderniza tu hogar bajo la <br><span class="highlight">Nueva Ley 2026</span></h2>
+            <p class="modern-lead">La normativa boliviana actual no es solo un trámite, es la puerta de entrada a una vivienda autónoma, segura y de bajo costo operativo.</p>
+            
+            <ul class="modern-list">
+              <li>
+                <span class="material-symbols-rounded">eco</span>
+                <div>
+                  <strong>Produce tu propia Energía</strong>
+                  <p>Instala paneles solares para tu consumo y vende el excedente a la red eléctrica automáticamente.</p>
+                </div>
+              </li>
+              <li>
+                <span class="material-symbols-rounded">ev_station</span>
+                <div>
+                  <strong>Infraestructura de Electromovilidad</strong>
+                  <p>Instalamos circuitos dedicados para carga de vehículos eléctricos bajo estándares internacionales.</p>
+                </div>
+              </li>
+              <li>
+                <span class="material-symbols-rounded">verified_user</span>
+                <div>
+                  <strong>Certificación y Seguridad</strong>
+                  <p>Actualizamos tu tablero y sistemas de protección para cumplir con las nuevas exigencias legales.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="modern-action">
+              <a href="#contacto" class="btn-tonal" style="background: var(--md-tertiary); color: white;">
+                Consultar Plan de Modernización
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="modern-visual">
+            <div class="saving-card">
+              <div class="chart-header">
+                <span class="material-symbols-rounded">analytics</span>
+                <span>Proyección de Ahorro Mensual</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar-item">
+                  <div class="bar-meta"><span>Gasto Actual</span> <strong>100%</strong></div>
+                  <div class="bar-container"><div class="bar bar-current"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-meta"><span>Con DomiVolt 2026</span> <strong>20%</strong></div>
+                  <div class="bar-container"><div class="bar bar-modernized"></div></div>
+                </div>
+              </div>
+              <p class="chart-note">Basado en optimización técnica y sistemas de autoconsumo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE COMPROMISO TÉCNICO -->
+    <section class="commitment reveal">
+        <div class="container commitment-grid">
+            <div class="commitment-card">
+                <div class="commitment-icon">🛡️</div>
+                <div class="commitment-text">
+                    <h3>Seguridad <span class="highlight">Garantizada</span></h3>
+                    <p>Aplicamos rigor de ingeniería para proteger lo más importante: tu familia y tu patrimonio en cada conexión.</p>
+                </div>
+            </div>
+            <div class="commitment-card">
+                <div class="commitment-icon">🏆</div>
+                <div class="commitment-text">
+                    <h3>Excelencia <span class="highlight">Técnica</span></h3>
+                    <p>Referente de confianza e innovación en Monteagudo, operando bajo los más altos estándares industriales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="commitment-quote">
+            <p>"La seguridad no es negociable, la excelencia es nuestra norma." — <strong>Casimiro Oropeza</strong></p>
+        </div>
+    </section>
+
+    <section class="features" id="expertos">
+        <div class="container">
+            <h2>Respaldo y <span class="highlight">Autoridad Técnica</span></h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-number">10+</div>
-                    <div class="feature-text">Años de Experiencia</div>
+                    <div class="feature-number">5+</div>
+                    <div class="feature-text">Años de Trayectoria Técnica</div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-number">500+</div>
-                    <div class="feature-text">Proyectos Completados</div>
+                    <div class="feature-number">200+</div>
+                    <div class="feature-text">Servicios Garantizados</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-number">100%</div>
-                    <div class="feature-text">Clientes Satisfechos</div>
+                    <div class="feature-text">Seguridad Certificada</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-number">24/7</div>
-                    <div class="feature-text">Atención Continua para emergencias</div>
+                    <div class="feature-text">Respuesta Inmediata</div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: var(--md-on-surface-variant); margin-bottom: 20px;">Liderados por el Tenico Casimiro Oropeza, nuestro equipo aplica estándares de precisión industrial en cada hogar.</p>
+                <a href="/tecnicos" class="cta-secondary">Conocer al Director y Equipo</a>
             </div>
         </div>
     </section>
@@ -122,6 +241,10 @@ import Footer from '../components/Footer.astro';
                     <p>Sí, absolutamente. Todos nuestros servicios cuentan con <strong>garantía de satisfacción</strong>. Si surge algún inconveniente relacionado con nuestra instalación, lo solucionamos sin costo adicional.</p>
                 </details>
                 <details class="faq-item">
+                    <summary>¿Cómo me beneficia la nueva Ley de Energías Renovables?</summary>
+                    <p>La nueva normativa de <strong>Generación Distribuida</strong> permite que instales paneles solares en tu casa o negocio y te conviertas en "prosumidor". Esto significa que puedes consumir tu propia energía y, si te sobra, el sistema la inyecta a la red pública, dándote un crédito a favor en tu factura mensual de luz.</p>
+                </details>
+                <details class="faq-item">
                     <summary>¿Realizan trabajos pequeños?</summary>
                     <p>¡Claro que sí! Ningún trabajo es demasiado pequeño. Desde cambiar un tomacorriente o una ducha hasta instalaciones completas, estamos listos para ayudarte.</p>
                 </details>
@@ -129,116 +252,252 @@ import Footer from '../components/Footer.astro';
         </div>
     </section>
 
-    <section class="contact" id="contacto">
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section class="testimonials">
         <div class="container">
-            <h2>Contáctanos <span class="highlight">Ahora</span></h2>
-            <p style="font-size: 18px; margin-bottom: 40px; color: var(--white);">Solicita tu presupuesto sin compromiso. Te respondemos en menos de 2 horas.</p>
-            
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-text">
-                            <strong>Llámanos</strong>
-                            <a href="tel:+59167671818" style="color: var(--white); text-decoration: none;">67671818</a>
+            <h2>Lo que dicen nuestros <span class="highlight">Clientes</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excelente servicio. Repararon un cortocircuito en mi negocio en tiempo récord. Muy profesionales y limpios al trabajar."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=juan" alt="Juan Pérez" class="client-photo" />
+                        <div>
+                            <strong>Juan Pérez</strong>
+                            <span>Propietario de Negocio</span>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-text">
-                            <strong>Escríbenos</strong>
-                            info@domivolt.com
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-text">
-                            <strong>Visítanos</strong>
-                            Monteagudo, Bolivia
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 10px; text-align: center;">
-                        <a href="https://wa.me/59167671818?text=Hola%20DomiVolt,%20necesito%20mas%20informacion" 
-                           class="cta-button" 
-                           target="_blank"
-                           rel="noopener noreferrer">
-                           Chat en WhatsApp
-                        </a>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"La instalación de las cámaras de seguridad quedó perfecta. El técnico Casimiro explicó todo el funcionamiento detalladamente."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=maria" alt="Mario Lopez" class="client-photo" />
+                        <div>
+                            <strong>Mario Lopez</strong>
+                            <span>Residente Monteagudo</span>
                         </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Tu celular" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Enviar Mensaje</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Mapa de Ubicación - Restaurado a su posición de ancho completo debajo -->
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15026.867277977824!2d-63.9545634!3d-19.8080564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1a63055555555%3A0xf026607623329666!2sMonteagudo%2C%20Bolivia!5e0!3m2!1ses-419!2sbo" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Muy puntuales y honestos con el presupuesto. Los recomiendo totalmente para cualquier trabajo eléctrico en el hogar."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=carlos" alt="Martha Perez" class="client-photo" />
+                        <div>
+                            <strong>Martha Perez</strong>
+                            <span>Cliente Hogar</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- CONTACTO PROFESIONAL -->
+    <section class="section section-alt" id="contacto">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <div class="section-label">
+              <span class="material-symbols-rounded">contact_support</span>
+              Contacto Directo
+            </div>
+            <h2 class="section-h2">¿Problema <em class="highlight">Eléctrico</em>?<br><span>Estamos Aquí.</span></h2>
+            <p class="section-desc">Cuéntanos tu problema o solicita una revisión técnica bajo la nueva normativa de seguridad. Respondemos en tiempo récord.</p>
+       
+            <div class="contact-ways">
+              <a href="https://wa.me/59167671818" target="_blank" class="contact-tile vibrate-tile">
+                <div class="contact-tile-icon"><span class="material-symbols-rounded">chat</span></div>
+                <div><span class="tile-label">WhatsApp Inmediato</span><span class="tile-value">+591 67671818</span></div>
+              </a>
+              <a href="tel:+59167671818" class="contact-tile">
+                <div class="contact-tile-icon"><span class="material-symbols-rounded">call</span></div>
+                <div><span class="tile-label">Llamar Ahora</span><span class="tile-value">+591 67671818</span></div>
+              </a>
+              <div class="contact-tile">
+                <div class="contact-tile-icon"><span class="material-symbols-rounded">location_on</span></div>
+                <div><span class="tile-label">Zona de Cobertura</span><span class="tile-value">Monteagudo – Bolivia</span></div>
+              </div>
+              <div class="contact-tile">
+                <div class="contact-tile-icon"><span class="material-symbols-rounded">alarm</span></div>
+                <div><span class="tile-label">Disponibilidad</span><span class="tile-value">24/7 · Emergencias</span></div>
+              </div>
+            </div>
+          </div>
+       
+          <div class="contact-form-pro">
+            <div class="form-hint reveal">
+              <span class="material-symbols-rounded">info</span>
+              Presupuesto gratis y sin compromiso →
+            </div>
+       
+            <div class="field-wrap reveal">
+              <label class="field-label">Tu Nombre</label>
+              <input type="text" id="fName" placeholder="Ej. Juan Pérez" required>
+            </div>
+       
+            <div class="field-wrap reveal">
+              <label class="field-label">Teléfono o WhatsApp</label>
+              <input type="tel" id="fPhone" placeholder="+591 XXX XXXXX" required>
+            </div>
+       
+            <div class="field-wrap reveal">
+              <label class="field-label">Tipo de Servicio</label>
+              <select id="fService">
+                <option value="">Selecciona un servicio…</option>
+                <option>Emergencia eléctrica urgente</option>
+                <option>Instalación eléctrica nueva</option>
+                <option>Mantenimiento preventivo</option>
+                <option>Diagnóstico normativa 2026</option>
+                <option>Actualización de tablero / cableado</option>
+                <option>Instalación para paneles solares</option>
+                <option>Otro</option>
+              </select>
+            </div>
+       
+            <div class="field-wrap reveal">
+              <label class="field-label">¿Qué necesitas?</label>
+              <textarea id="fMsg" placeholder="Cuéntanos brevemente tu problema..."></textarea>
+            </div>
+       
+            <button class="form-submit-btn reveal" id="btnSend">
+              <span class="material-symbols-rounded">send</span>
+              Solicitar Presupuesto Gratis
+            </button>
+          </div>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15026.867277977824!2d-63.9545634!3d-19.8080564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1a63055555555%3A0xf026607623329666!2sMonteagudo%2C%20Bolivia!5e0!3m2!1ses-419!2sbo" 
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+      </div>
     </section>
 
     <Footer />
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger') as HTMLElement;
-            const navLinks = document.querySelector('.nav-links') as HTMLElement;
-            const links = document.querySelectorAll('.nav-links a');
-            const contactForm = document.querySelector('.contact-form') as HTMLFormElement;
+            const btnSend = document.getElementById('btnSend');
+            if (btnSend) {
+                btnSend.addEventListener('click', () => {
+                    const nombre = (document.getElementById('fName') as HTMLInputElement).value;
+                    const telefono = (document.getElementById('fPhone') as HTMLInputElement).value;
+                    const servicio = (document.getElementById('fService') as HTMLSelectElement).value;
+                    const mensaje = (document.getElementById('fMsg') as HTMLTextAreaElement).value;
 
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('open');
-                    hamburger.classList.toggle('toggle');
-                });
+                    if(!nombre || !telefono) {
+                        alert("Por favor, completa tu nombre y teléfono.");
+                        return;
+                    }
+                    
+                    const text = `*SOLICITUD WEB DOMIVOLT*\n\n*Nombre:* ${nombre}\n*Tel:* ${telefono}\n*Servicio:* ${servicio}\n*Mensaje:* ${mensaje}`;
+                    window.open(`https://wa.me/59167671818?text=${encodeURIComponent(text)}`, '_blank');
 
-                links.forEach(link => {
-                    link.addEventListener('click', () => {
-                        navLinks?.classList.remove('open');
-                        hamburger?.classList.remove('toggle');
-                    });
-                });
-            }
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const nombre = formData.get('nombre')?.toString() || '';
-                    const telefono = formData.get('telefono')?.toString() || '';
-                    const mensaje = formData.get('mensaje')?.toString() || '';
-                    
-                    const text = `Hola DomiVolt, soy ${nombre}.\nMi teléfono es: ${telefono}\nMensaje: ${mensaje}`;
-                    const encodedText = encodeURIComponent(text);
-                    
-                    window.open(`https://wa.me/59167671818?text=${encodedText}`, '_blank');
+                    // Cambiar estado a éxito
+                    btnSend.classList.add('success');
+                    btnSend.innerHTML = '<span class="material-symbols-rounded">check_circle</span> ¡Solicitud Enviada!';
                 });
             }
+
+            // Lógica de Scroll Reveal
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // ── Lógica de Máquina de Escribir (Typewriter) ──
+            const typewriterEl = document.querySelector('.typewriter');
+            if (typewriterEl) {
+                const words = JSON.parse(typewriterEl.getAttribute('data-words') || '[]');
+                let wordIndex = 0;
+                let charIndex = words[0].length;
+                let isDeleting = true;
+                let speed = 150;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+                    
+                    if (isDeleting) {
+                        typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                        speed = 80; // Velocidad al borrar
+                    } else {
+                        typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                        speed = 150; // Velocidad al escribir
+                    }
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        isDeleting = true;
+                        speed = 2000; // Pausa cuando la palabra está completa
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        speed = 500; // Pausa antes de empezar nueva palabra
+                    }
+
+                    setTimeout(type, speed);
+                }
+                
+                // Iniciamos la animación después de un pequeño delay
+                setTimeout(type, 1500);
+            }
+
+            // ── Lógica de Brillo (Spotlight) ──
+            window.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                document.documentElement.style.setProperty('--mouse-x', `${clientX}px`);
+                document.documentElement.style.setProperty('--mouse-y', `${clientY}px`);
+            });
+
+            // ── Lógica de Sonido Eléctrico (Sintetizado) ──
+            let audioCtx;
+            function playElectricZap() {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                // Crear buffer de ruido blanco para la estática
+                const bufferSize = audioCtx.sampleRate * 0.05; // 50ms (muy corto)
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.value = 1800; // Frecuencia técnica
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.02, audioCtx.currentTime); // Muy suave
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+                noise.connect(filter).connect(gain).connect(audioCtx.destination);
+                noise.start();
+            }
+
+            // Asignar el sonido a todos los botones principales
+            const buttons = document.querySelectorAll('.cta-button, .cta-secondary, .btn-tonal, .form-submit-btn, .contact-tile');
+            buttons.forEach(btn => btn.addEventListener('click', playElectricZap));
         });
     </script>
 </Layout>
@@ -254,78 +513,19 @@ import Footer from '../components/Footer.astro';
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 100px; /* Evita que el header tape los títulos al navegar */
-    }
-
-    :global(body) {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: var(--bg-body);
-        color: var(--text-main);
         overflow-x: hidden;
+        /* Efecto de cuadrícula de cuaderno */
+        background-color: #000;
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
     }
 
-    header {
-        background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
-        padding: 20px 0;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2);
-    }
-
-    nav {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: var(--accent);
-        text-shadow: 0 0 20px rgba(245, 162, 1, 0.5);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
-    .logo img{
-        width: 80px;
-    }
-
-    .hamburger {
-        display: none;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 10px;
-    }
-
-    .line {
-        width: 25px;
-        height: 3px;
-        background-color: var(--white);
-        margin: 5px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 30px;
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: var(--white);
-        text-decoration: none;
-        transition: color 0.3s;
-        font-weight: 500;
-    }
-
-    .nav-links a:hover {
-        color: var(--accent);
+    body {
+        overflow-x: hidden;
     }
 
     .hero {
@@ -349,7 +549,12 @@ import Footer from '../components/Footer.astro';
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen para leer el texto */
+        /* Gradiente más denso basado en el color primario para mejor contraste */
+        background: linear-gradient(180deg, 
+            rgba(2, 20, 42, 0.4) 0%, 
+            rgba(2, 20, 42, 0.7) 50%, 
+            rgba(2, 20, 42, 0.9) 100%
+        );
         z-index: 1;
     }
 
@@ -366,10 +571,26 @@ import Footer from '../components/Footer.astro';
     }
 
     h1 {
-        font-size: 56px;
+        font-size: clamp(2.5rem, 8vw, 4rem);
         margin-bottom: 20px;
-        color: var(--white);
+        color: var(--md-on-surface);
         line-height: 1.2;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Estilos del cursor para Typewriter */
+    .typewriter::after {
+        content: '|';
+        animation: blink 0.8s infinite;
+        margin-left: 2px;
+        color: var(--accent);
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
     }
 
     .highlight {
@@ -408,6 +629,12 @@ import Footer from '../components/Footer.astro';
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
+    .tertiary-badge {
+        border-color: var(--md-tertiary) !important;
+        background-color: color-mix(in srgb, var(--md-tertiary) 20%, transparent) !important;
+        color: var(--white) !important;
+    }
+
     @keyframes pulse-badge {
         0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 4, 41, 0.7); }
         70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(217, 4, 41, 0); }
@@ -425,7 +652,7 @@ import Footer from '../components/Footer.astro';
         padding: 18px 45px;
         text-decoration: none;
         border-radius: 50px;
-        font-weight: bold;
+        font-weight: 800;
         font-size: 18px;
         transition: all 0.3s;
         box-shadow: 0 10px 30px rgba(252, 163, 17, 0.4);
@@ -436,9 +663,31 @@ import Footer from '../components/Footer.astro';
         box-shadow: 0 15px 40px rgba(252, 163, 17, 0.6);
     }
 
+    .cta-secondary {
+        display: inline-block;
+        padding: 12px 30px;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        transition: all 0.3s;
+    }
+
+    .cta-secondary:hover {
+        background: var(--accent);
+        color: #000;
+    }
+
     .services {
         padding: 100px 20px;
-        background: var(--primary);
+        background-color: var(--primary);
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
     }
 
     .container {
@@ -448,55 +697,353 @@ import Footer from '../components/Footer.astro';
     }
 
     h2 {
-        font-size: 42px;
+        font-size: clamp(2rem, 5vw, 2.8rem);
         text-align: center;
         margin-bottom: 60px;
-        color: var(--white);
+        color: var(--md-on-surface);
+        font-weight: 700;
+        text-transform: uppercase;
     }
 
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
         gap: 30px;
     }
 
     .service-card {
-        background: linear-gradient(135deg, #000000 0%, #14213D 100%);
-        padding: 40px 30px;
-        border-radius: 20px;
+        background: var(--md-surface-container);
+        padding: 48px 32px;
+        border-radius: var(--shape-xl);
         text-align: center;
-        transition: all 0.3s;
-        border: 2px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 1px solid var(--md-outline-variant);
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 
     .service-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--accent);
-        box-shadow: 0 20px 40px rgba(252, 163, 17, 0.3);
+        transform: translateY(-8px);
+        border-color: var(--md-primary);
+        box-shadow: var(--elev-2);
     }
 
-    .service-icon {
-        font-size: 60px;
+    .service-icon-wrap {
+        width: 72px;
+        height: 72px;
+        background: rgba(254, 104, 2, 0.1);
+        border-radius: var(--shape-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
+    }
+
+    .service-icon-wrap .material-symbols-rounded {
+        font-size: 36px;
+        color: var(--md-primary);
     }
 
     .service-card h3 {
         font-size: 24px;
         margin-bottom: 15px;
         color: var(--accent);
+        font-weight: 700;
     }
 
     .service-card p {
-        color: #e0e0e0;
+        color: var(--md-on-surface-variant);
+    }
+
+    /* Servicios Especializados (Complementarios) */
+    .complementary-services {
+        padding: 80px 20px;
+        background-color: #000000;
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .comp-card {
+        background: var(--md-surface-container);
+        padding: 48px 32px;
+        border-radius: var(--shape-xl);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 1px solid var(--md-outline-variant);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .comp-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--md-primary);
+        box-shadow: var(--elev-2);
+    }
+
+    .comp-card h3 {
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .comp-card p {
+        color: var(--md-on-surface-variant);
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    /* --- MODERNIZATION SECTION --- */
+    .modernization {
+        padding: 120px 20px;
+        background: #000;
+        position: relative;
+    }
+
+    .modern-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .modern-lead {
+        font-size: 1.2rem;
+        color: var(--md-on-surface-variant);
+        margin-bottom: 40px;
+        line-height: 1.6;
+    }
+
+    .modern-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .modern-list li {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .modern-list li .material-symbols-rounded {
+        color: var(--md-tertiary);
+        background: color-mix(in srgb, var(--md-tertiary) 15%, transparent);
+        padding: 12px;
+        border-radius: 16px;
+        font-size: 28px;
+        animation: pulse-tertiary 4s infinite;
+    }
+
+    @keyframes pulse-tertiary {
+        0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-tertiary) 40%, transparent); }
+        70% { box-shadow: 0 0 0 15px color-mix(in srgb, var(--md-tertiary) 0%, transparent); }
+        100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--md-tertiary) 0%, transparent); }
+    }
+
+    .modern-list li strong {
+        display: block;
+        color: var(--md-on-surface);
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+    }
+
+    .modern-list li p {
+        color: var(--md-on-surface-variant);
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .modern-action {
+        margin-top: 50px;
+    }
+
+    .saving-card {
+        background: var(--md-surface-container);
+        padding: 40px;
+        border-radius: 32px;
+        border: 1px solid var(--md-outline-variant);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .bar-item {
+        margin-bottom: 28px;
+    }
+
+    .bar-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        color: var(--md-on-surface-variant);
+    }
+
+    .bar-meta strong { color: var(--md-on-surface); }
+
+    .bar-container {
+        height: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .bar {
+        height: 100%;
+        width: 0; /* Inicia en 0 para que la transición se dispare */
+        border-radius: inherit;
+        transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        display: block;
+    }
+
+    /* Valores finales cuando la sección entra en pantalla */
+    .active .bar-current { width: 100%; }
+    .active .bar-modernized { width: 20%; }
+
+    .bar-current { background: #555; }
+    .bar-modernized { 
+        background: linear-gradient(90deg, var(--md-tertiary), #00e676);
+        box-shadow: 0 0 15px rgba(0, 189, 104, 0.3);
+    }
+
+    .chart-note {
+        font-size: 0.75rem !important;
+        opacity: 0.6;
+        margin-top: 12px !important;
+        font-style: italic;
+    }
+
+    .btn-tonal {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--accent);
+        color: #000;
+        padding: 16px 32px;
+        border-radius: var(--shape-lg);
+        text-decoration: none;
+        font-weight: 800;
+        font-family: 'Barlow Condensed', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(254, 104, 2, 0.3);
+    }
+
+    .btn-tonal:hover {
+        background: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(254, 104, 2, 0.5);
+    }
+
+    .ley-action {
+        flex-shrink: 0;
+    }
+
+    /* Compromiso Técnico (Compacto) */
+    .commitment {
+        padding: 60px 20px;
+        background: linear-gradient(180deg, #000000 0%, var(--primary) 100%);
+        border-top: 1px solid rgba(252, 163, 17, 0.1);
+    }
+
+    .commitment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto 30px auto;
+    }
+
+    .commitment-card {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .commitment-card:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(252, 163, 17, 0.5);
+        box-shadow: 0 0 20px rgba(252, 163, 17, 0.1);
+    }
+
+    .commitment-icon {
+        font-size: 35px;
+        filter: drop-shadow(0 0 10px rgba(252, 163, 17, 0.3));
+        transition: all 0.3s ease;
+    }
+
+    .commitment-card:hover .commitment-icon {
+        filter: drop-shadow(0 0 20px rgba(252, 163, 17, 0.8));
+        transform: scale(1.15);
+    }
+
+    .commitment-text h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        color: var(--md-on-surface);
+    }
+
+    .commitment-text p {
+        color: var(--md-on-surface-variant);
+        line-height: 1.4;
+        font-size: 0.9rem;
+    }
+
+    .commitment-quote {
+        text-align: center;
+        color: var(--accent);
+        font-style: italic;
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+
+    /* Animación Scroll Reveal */
+    .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1.2s cubic-bezier(0.5, 0, 0, 1), transform 1.2s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .features {
         padding: 100px 20px;
-        background: #000000;
+        background-color: #000000;
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
     }
 
     .features-grid {
@@ -519,14 +1066,20 @@ import Footer from '../components/Footer.astro';
     }
 
     .feature-text {
-        color: var(--white);
+        color: var(--md-on-surface);
         font-size: 18px;
     }
 
     /* --- FAQ SECTION --- */
     .faq {
         padding: 100px 20px;
-        background: linear-gradient(180deg, #000000 0%, var(--primary) 100%);
+        background:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(180deg, #000000 0%, var(--primary) 100%);
+        background-size: 100% 100%, 30px 30px, 30px 30px, 100% 100%;
+        background-attachment: fixed, scroll, scroll, scroll;
     }
 
     .faq-grid {
@@ -555,7 +1108,7 @@ import Footer from '../components/Footer.astro';
         cursor: pointer;
         font-weight: bold;
         font-size: 18px;
-        color: var(--white);
+        color: var(--md-on-surface);
         list-style: none; /* Oculta el triángulo por defecto */
         display: flex;
         justify-content: space-between;
@@ -583,134 +1136,288 @@ import Footer from '../components/Footer.astro';
 
     .faq-item p {
         padding: 0 20px 25px 20px;
-        color: #e0e0e0;
+        color: var(--md-on-surface-variant);
         line-height: 1.6;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         margin-top: 0;
         padding-top: 15px;
     }
 
-    /* --- SECCIÓN CONTACTO --- */
-    .contact {
+    /* --- TESTIMONIALS SECTION --- */
+    .testimonials {
         padding: 100px 20px;
-        background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
-        text-align: center;
+        background-color: var(--primary);
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
     }
 
-    .contact-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: left;
-    }
-
-    .contact-info {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        flex-direction: column;
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
+        margin-top: 40px;
     }
 
-    .contact-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .contact-icon {
-        font-size: 30px;
-        color: var(--accent);
-        width: 50px;
-        text-align: center;
-    }
-
-    .contact-text {
-        color: var(--white);
-        font-size: 18px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contact-text strong {
-        color: var(--accent);
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .map-container {
-        margin-top: 50px;
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
         border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid #333;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease;
     }
 
-    /* Formulario */
-    .contact-form-container {
-        flex: 1;
-        min-width: 300px;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 30px;
-        border-radius: 20px;
-        border: 1px solid rgba(252, 163, 17, 0.3);
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group label {
-        display: block;
-        color: var(--accent);
-        margin-bottom: 8px;
-        font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid #333;
-        border-radius: 8px;
-        color: #fff;
-        font-family: inherit;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
+    .testimonial-card:hover {
+        transform: translateY(-5px);
         border-color: var(--accent);
     }
 
-    .submit-button {
+    .stars {
+        color: var(--accent);
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+        color: var(--md-on-surface);
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-photo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent);
+        box-shadow: 0 0 15px rgba(252, 163, 17, 0.2);
+    }
+
+    .client-info strong {
+        display: block;
+        color: var(--md-on-surface);
+        font-size: 18px;
+    }
+
+    .client-info span {
+        color: var(--accent);
+        font-size: 14px;
+    }
+
+    /* ── CONTACT SECTION (M3) ── */
+    .section-alt {
+        padding: 100px 20px;
+        background-color: var(--primary);
+        background-image:
+            radial-gradient(600px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(252, 163, 17, 0.12), transparent 80%),
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 30px 30px, 30px 30px;
+        background-attachment: fixed, scroll, scroll;
+    }
+
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+        margin-top: 40px;
+    }
+
+    .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+    }
+
+    .section-h2 {
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        text-align: left;
+        color: var(--md-on-surface);
+    }
+
+    .section-h2 span {
+        color: var(--md-on-surface);
+        opacity: 0.7;
+    }
+
+    .section-desc {
+        color: var(--md-on-surface-variant);
+        font-size: 1.1rem;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+
+    .contact-ways { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+
+    /* M3 List Tile */
+    .contact-tile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+        background: var(--md-surface-container);
+        border: 1px solid var(--md-outline-variant);
+        border-radius: var(--shape-lg);
+        text-decoration: none;
+        transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .contact-tile:hover { 
+        border-color: var(--md-primary); 
+        box-shadow: var(--elev-2);
+        transform: translateX(5px);
+    }
+
+    .contact-tile-icon {
+        width: 44px; height: 44px;
+        background: rgba(254, 104, 2, 0.1); /* Basado en var(--accent) */
+        border-radius: var(--shape-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .contact-tile-icon .material-symbols-rounded { color: var(--md-primary); font-size: 22px; }
+
+    .tile-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--md-on-surface-variant); display: block; }
+    .tile-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; color: var(--md-on-surface); display: block; margin-top: 1px; }
+
+    /* ── FORM (M3 Outlined TextField) ── */
+    .contact-form-pro {
+        background: var(--md-surface-container);
+        border: 1px solid var(--md-outline-variant);
+        border-radius: var(--shape-xl);
+        padding: 32px;
+        box-shadow: var(--elev-2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-form-pro::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--md-primary), var(--md-secondary));
+    }
+
+    .form-hint {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(138,217,246,0.08);
+        border: 1px solid rgba(138,217,246,0.2);
+        border-radius: var(--shape-md);
+        padding: 10px 14px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--md-secondary);
+        margin-bottom: 24px;
+        letter-spacing: 0.03em;
+    }
+    .form-hint .material-symbols-rounded { font-size: 18px; }
+
+    .field-wrap {
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    .field-label {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--md-on-surface-variant);
+        margin-bottom: 6px;
+    }
+
+    .field-wrap input,
+    .field-wrap textarea,
+    .field-wrap select {
         width: 100%;
-        padding: 15px;
-        background: var(--accent);
-        color: #000;
+        background: var(--md-surface-variant);
+        border: 1.5px solid var(--md-outline);
+        border-radius: var(--shape-sm);
+        color: var(--md-on-surface);
+        padding: 13px 16px;
+        font-family: 'Barlow', sans-serif;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .field-wrap input:focus,
+    .field-wrap textarea:focus,
+    .field-wrap select:focus {
+        border-color: var(--md-primary);
+        box-shadow: 0 0 0 3px rgba(254, 104, 2, 0.15);
+    }
+
+    .field-wrap textarea { resize: vertical; min-height: 100px; }
+    .field-wrap input::placeholder,
+    .field-wrap textarea::placeholder { color: var(--md-outline); }
+    .field-wrap select option { background: var(--md-surface-variant); }
+
+    /* Staggered Reveal Delays */
+    .contact-form-pro .reveal:nth-child(1) { transition-delay: 0.1s; }
+    .contact-form-pro .reveal:nth-child(2) { transition-delay: 0.2s; }
+    .contact-form-pro .reveal:nth-child(3) { transition-delay: 0.3s; }
+    .contact-form-pro .reveal:nth-child(4) { transition-delay: 0.4s; }
+    .contact-form-pro .reveal:nth-child(5) { transition-delay: 0.5s; }
+    .contact-form-pro .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+    .form-submit-btn {
+        width: 100%;
+        background: var(--md-primary);
+        color: #fff;
         border: none;
-        border-radius: 50px;
-        font-weight: bold;
-        font-size: 16px;
+        border-radius: var(--shape-lg);
+        padding: 16px 24px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 800;
+        font-size: 1.05rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         cursor: pointer;
-        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 4px 16px rgba(254, 104, 2, 0.35);
+        transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+        margin-top: 8px;
+    }
+    .form-submit-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(254, 104, 2, 0.45); }
+
+    .map-container {
+        margin-top: 60px;
+        border-radius: var(--shape-xl);
+        overflow: hidden;
+        border: 1px solid var(--md-outline-variant);
+        box-shadow: var(--elev-2);
     }
 
-    .submit-button:hover {
-        background: #e09510;
-        transform: translateY(-2px);
-    }
-
-    /* --- STICKY WHATSAPP --- */
     .sticky-whatsapp {
         position: fixed;
         bottom: 30px;
@@ -764,40 +1471,6 @@ import Footer from '../components/Footer.astro';
             padding: 30px 25px;
         }
         .contact-form-container { padding: 25px; }
-
-        /* Menú Hamburguesa */
-        .hamburger {
-            display: block;
-            z-index: 1001;
-        }
-
-        .nav-links {
-            position: fixed;
-            background: #000000;
-            height: 100vh;
-            width: 100%;
-            top: 0;
-            left: 0;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .nav-links.open {
-            transform: translateX(0%);
-        }
-
-        .nav-links li {
-            margin: 20px 0;
-        }
-
-        .nav-links a {
-            font-size: 24px;
-        }
-
         .hero {
             /* En móvil mantenemos el centrado pero aseguramos que el texto no choque con el header si la pantalla es muy pequeña */
             padding-top: 80px; 
@@ -810,21 +1483,69 @@ import Footer from '../components/Footer.astro';
             font-size: 24px;
         }
 
-        .contact-wrapper {
-            flex-direction: column;
+        .contact-layout {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .section-h2 {
+            font-size: 2.2rem;
+            text-align: center;
+        }
+        .section-desc {
+            text-align: center;
+            margin: 0 auto 30px auto;
         }
 
-        /* Animación del icono hamburguesa */
-        .hamburger.toggle .line:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+        .modernization { padding: 80px 0; }
+
+        .modern-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
         }
 
-        .hamburger.toggle .line:nth-child(2) {
-            opacity: 0;
+        .modern-info .section-label {
+            justify-content: center;
+            width: 100%;
         }
 
-        .hamburger.toggle .line:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+        .modern-info h2 { 
+            text-align: center; 
+            font-size: 1.8rem;
         }
+        .modern-lead { 
+            text-align: center; 
+            font-size: 1.05rem;
+        }
+        .modern-action { text-align: center; }
+
+        .saving-card { 
+            padding: 30px 20px; 
+            box-shadow: 0 0 30px rgba(0, 189, 104, 0.15), 0 10px 40px rgba(0,0,0,0.6);
+            border-color: rgba(0, 189, 104, 0.2);
+        }
+
+            .btn-tonal {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+                box-sizing: border-box;
+                white-space: normal; /* Permite que el texto baje si es muy largo */
+                text-align: center;
+            }
+            
+            .btn-tonal .material-symbols-rounded {
+                font-size: 18px;
+            }
+    }
+
+    /* Estado de éxito: Dorado Brillante con Glow */
+    .form-submit-btn.success {
+        background: linear-gradient(135deg, #FFD700 0%, #FFB900 100%) !important;
+        color: #000 !important;
+        box-shadow: 0 0 35px rgba(255, 215, 0, 0.7) !important;
+        border: 2px solid #fff !important;
+        pointer-events: none; /* Evita múltiples envíos */
+        transform: scale(1.02);
     }
 </style>

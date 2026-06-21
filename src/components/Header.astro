@@ -1,0 +1,162 @@
+---
+// src/components/Header.astro
+---
+<header>
+    <nav>
+        <a href="/" class="logo">
+            <img src="/logodomivolt.png" alt="DomiVolt Logo">
+            DomiVolt
+        </a>
+        <button class="hamburger" aria-label="Menú de navegación">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#soluciones">Soluciones</a></li>
+            <li><a href="/tecnicos">Expertos</a></li>
+            <li><a href="https://wa.me/59167671818?text=EMERGENCIA" class="nav-emergency">⚡ Emergencias 24/7</a></li>
+            <li><a href="/#contacto" class="nav-cta">Presupuesto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const setupMenu = () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links a');
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+                hamburger.classList.toggle('toggle');
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    hamburger.classList.remove('toggle');
+                });
+            });
+        }
+    };
+
+    // Ejecutar en carga inicial y en transiciones de Astro (si usas View Transitions)
+    setupMenu();
+    document.addEventListener('astro:after-swap', setupMenu);
+</script>
+
+<style>
+header {
+    background: linear-gradient(135deg, var(--primary, #14213D) 0%, #000000 100%);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(252, 163, 17, 0.2);
+    border-bottom: 1px solid rgba(252, 163, 17, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--accent, #FCA311);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 20px rgba(252, 163, 17, 0.3);
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img { width: 50px; margin-right: 10px; }
+
+.nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover { color: var(--accent, #FCA311); }
+
+.nav-emergency {
+    color: #ff4d4d !important;
+    font-weight: bold !important;
+    animation: pulse 2s infinite;
+}
+
+.nav-cta {
+    background: var(--accent, #FCA311);
+    color: #000 !important;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 4px 15px rgba(252, 163, 17, 0.3);
+}
+
+.nav-cta:hover {
+    background: #fff !important;
+    transform: translateY(-2px);
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.hamburger { display: none; cursor: pointer; background: none; border: none; padding: 10px; }
+
+.line { width: 25px; height: 3px; background-color: #fff; margin: 5px; transition: all 0.3s; }
+
+@media (max-width: 1024px) {
+    .logo { font-size: 22px; }
+    .nav-links { gap: 15px; }
+}
+
+@media (max-width: 900px) {
+    .hamburger { display: block; z-index: 1001; }
+    .nav-links {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+    }
+    .nav-links.open { transform: translateX(0%); }
+    .nav-links li { margin: 15px 0; }
+    .nav-links a { font-size: 1.3rem; text-align: center; }
+    .nav-cta { padding: 12px 30px; }
+    .hamburger.toggle .line:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .hamburger.toggle .line:nth-child(2) { opacity: 0; }
+    .hamburger.toggle .line:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+}
+</style>

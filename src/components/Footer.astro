@@ -7,8 +7,18 @@ const currentYear = new Date().getFullYear();
         <div class="footer-content">
             <div class="brand-section">
                 <span class="footer-logo">DomiVolt</span>
-                <p>Soluciones eléctricas domiciliarias seguras y profesionales.</p>
+                <p>Ingeniería y seguridad eléctrica en Monteagudo.</p>
+                <div class="law-badge">
+                    <span class="material-symbols-rounded">verified_user</span>
+                    Diagnóstico Ley 2026
+                </div>
             </div>
+
+            <nav class="footer-links" aria-label="Enlaces rápidos">
+                <a href="/#soluciones">Servicios</a>
+                <a href="/tecnicos">Expertos</a>
+                <a href="/#contacto">Presupuesto</a>
+            </nav>
             
             <div class="social-section">
                 <a href="https://wa.me/59167671818" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -26,10 +36,10 @@ const currentYear = new Date().getFullYear();
 <style>
     footer {
         background: #000000;
-        border-top: 2px solid #14213D;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 50px 0 20px;
-        color: #E5E5E5;
-        margin-top: auto;
+        color: var(--md-on-surface);
+        margin-top: 80px;
     }
 
     .container {
@@ -41,25 +51,59 @@ const currentYear = new Date().getFullYear();
     .footer-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding-bottom: 30px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         margin-bottom: 20px;
+        gap: 40px;
     }
 
     .footer-logo {
         font-size: 28px;
-        font-weight: bold;
-        color: #FCA311;
+        font-weight: 800;
+        color: var(--accent);
         text-shadow: 0 0 15px rgba(252, 163, 17, 0.3);
         display: block;
         margin-bottom: 5px;
     }
 
     .brand-section p {
-        color: #999;
+        color: var(--md-on-surface-variant);
         font-size: 0.95rem;
         margin: 0;
+    }
+
+    .law-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        color: var(--accent);
+        background: rgba(254, 104, 2, 0.1);
+        padding: 5px 12px;
+        border-radius: var(--shape-sm, 4px);
+        margin-top: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .law-badge .material-symbols-rounded { font-size: 16px; }
+
+    .footer-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .footer-links a {
+        color: var(--md-on-surface-variant);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
     }
 
     .social-section {
@@ -68,7 +112,7 @@ const currentYear = new Date().getFullYear();
     }
 
     .social-section a {
-        color: #E5E5E5;
+        color: var(--md-on-surface);
         font-size: 24px;
         transition: all 0.3s ease;
         display: flex;
@@ -81,22 +125,37 @@ const currentYear = new Date().getFullYear();
     }
 
     .social-section a:hover {
-        background: #FCA311;
-        color: #000;
+        background: var(--accent);
+        color: var(--md-on-primary, #000);
         transform: translateY(-3px);
     }
 
     .copyright-section {
         text-align: center;
         font-size: 0.9rem;
-        color: #666;
+        color: var(--md-on-surface-variant);
     }
 
     @media (max-width: 768px) {
         .footer-content {
             flex-direction: column;
             text-align: center;
+            align-items: center;
             gap: 30px;
+        }
+        .brand-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .social-section {
+            justify-content: center;
+            width: 100%;
+        }
+        .footer-links {
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
         }
     }
 </style>
