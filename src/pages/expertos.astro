@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Importamos los estilos que vamos a necesitar
+import "../styles/pages-index.css"; // Reutilizamos estilos del index
+import "../styles/pages-expertos.css"; // Estilos específicos para esta página
+---
+
+<Layout
+    title="Nuestro Equipo de Expertos | DomiVolt"
+    description="Conoce a Casimiro Oropeza, el creador de DomiVolt y tecnico principal, y al equipo de profesionales que garantizan la seguridad y eficiencia de tus instalaciones eléctricas."
+>
+    <Header />
+
+    <main class="expert-page" style="padding-top: 150px;">
+        <!-- Sección del Director -->
+        <section class="director-profile section-grid-bg">
+            <div class="container">
+                <div class="profile-grid">
+                    <div class="profile-image-container reveal">
+                        <img 
+                            src="/img/casimiro-oropeza.png" 
+                            alt="Foto de Casimiro Oropeza, Director Técnico de DomiVolt" 
+                            class="profile-image"
+                        />
+                    </div>
+                    <div class="profile-info reveal">
+                        <div class="section-label">
+                            <span class="material-symbols-rounded">engineering</span>
+                            Fundador
+                        </div>
+                        <h1 class="profile-name">Casimiro Oropeza</h1>
+                        <p class="profile-bio">
+                            Con más de 5 años de experiencia en el campo de la ingeniería eléctrica, Casimiro es el motor detrás de la precisión y seguridad de DomiVolt. Su filosofía se basa en aplicar estándares industriales en el ámbito residencial, garantizando que cada instalación no solo cumpla con la normativa, sino que la supere.
+                        </p>
+                        <blockquote class="profile-quote">
+                            "La verdadera calidad no está en lo que se ve, sino en la tranquilidad que perdura. Mi compromiso es con la seguridad de tu familia y la eficiencia de tu hogar."
+                        </blockquote>
+                        <div class="profile-actions">
+                            <a href="/#contacto" class="btn btn-primary">Contactar para un Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del Equipo -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Nuestro <span class="highlight">Equipo</span></h2>
+                <p class="team-intro">Profesionales certificados y en constante capacitación para ofrecerte las mejores soluciones.</p>
+                
+                <div class="team-grid">
+                    <!-- Tarjeta destacada para el socio -->
+                    <div class="card team-card partner-card reveal">
+                        <img src="/img/miguel-oropeza.jpg" alt="Foto del socio técnico Miguel Angel Oropeza" class="team-photo partner-photo"/>
+                        <h3>Miguel Angel Oropeza Medina</h3>
+                        <p class="team-role">Socio y Cofundador Técnico</p>
+                        <p>El pilar técnico del proyecto. Su visión y experiencia son fundamentales en cada solución que entregamos, garantizando innovación y calidad superior.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

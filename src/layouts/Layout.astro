@@ -1,5 +1,10 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+// ELIMINADO: Se quita la importación de pages-index.css de aquí.
+// Este archivo contiene estilos específicos para la página de inicio y no debe ser global.
+// Se carga directamente en `src/pages/index.astro`.
+
 interface Props {
 	title: string;
 	description?: string;
@@ -54,15 +59,18 @@ const socialImageURL = new URL(image, Astro.url);
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet" />
     <ClientRouter />
 </head>
-<body>
+<body> 
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <!-- Efecto de Rayos Global (Pure CSS) -->
     <div class="storm-effect">
         <div class="lightning l1"></div>
         <div class="lightning l2"></div>
         <div class="flash"></div>
     </div>
-
-    <slot />
+    
+    <main id="main-content">
+        <slot />
+    </main>
     
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/59167671818?text=Hola%20DomiVolt,%20necesito%20información" 
@@ -79,87 +87,13 @@ const socialImageURL = new URL(image, Astro.url);
 </html>
 
 <style is:global>
-    :root {
-        /* Typography Tokens */
-        --md-font-sans: 'Barlow', sans-serif;
-        --md-font-condensed: 'Barlow Condensed', sans-serif;
+    /*
+     * ELIMINADO: Se ha quitado el bloque de variables de tema de este archivo.
+     * La única fuente de verdad para las variables de color ahora es /src/styles/global.css.
+     * Esto resuelve el conflicto que impedía que los fondos y tarjetas cambiaran de color.
+     */
 
-        /* MD3 Inspired Palette - Light Mode */
-        --primary: #02142A;
-        --secondary: #4D616C;
-        --accent: #FE6802; 
-        --accent-light: #FFD35B;
-
-        /* MD3 Color Tokens */
-        --md-primary: var(--accent);
-        --md-on-primary: #ffffff;
-        --md-tertiary: #00BD68; /* Verde vibrante para servicios ecológicos */
-        --md-on-tertiary: #ffffff; /* Texto blanco sobre terciario */
-        --md-secondary: #02142A;
-        --md-surface-container: #F0F4F7;
-        --md-surface-variant: #DEE3E9;
-        --md-on-surface: #191C1E;
-        --md-on-surface-variant: #41484D;
-        --md-outline: #71787D;
-        --md-outline-variant: #C1C7CE;
-
-        /* MD3 Shape & Elevation */
-        --shape-sm: 4px;
-        --shape-md: 12px;
-        --shape-lg: 16px;
-        --shape-xl: 28px;
-        --elev-2: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);
-
-        --white: #ffffff;
-        --bg-light: #f8f9fa;
-
-        /* --- Variables Semánticas (Adaptables) --- */
-        /* Por defecto (Modo Claro) */
-        --bg-body: var(--bg-light);
-        --text-main: var(--text-dark);
-        --header-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        --header-text: var(--white);
-        --hero-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        --hero-text: var(--white);
-        --section-title: var(--primary);
-        --services-bg: var(--white);
-        --card-bg: var(--bg-light);
-        --card-title: var(--primary);
-        --card-text: var(--text-dark);
-        --features-bg: var(--bg-light);
-        --features-text: var(--text-dark);
-        --contact-bg: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-        --contact-text: var(--white);
-        --input-bg: rgba(255, 255, 255, 0.9);
-        --input-text: #333;
-        --footer-bg: var(--primary);
-        --footer-text: var(--text-light);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            /* MD3 Inspired Palette - Dark Mode */
-            --md-primary: var(--accent);
-            --md-on-primary: #000000;
-            --md-tertiary: #00E676; /* Verde más brillante para dark mode */
-            --md-on-tertiary: #000000; /* Texto negro sobre terciario */
-            --md-secondary: #8AD9F6;
-            --md-surface-container: #1D2023;
-            --md-surface-variant: #41484D;
-            --md-on-surface: #E1E2E4;
-            --md-on-surface-variant: #C1C7CE;
-            --md-outline: #8B9297;
-            --md-outline-variant: #41484D;
-
-            --bg-body: #191C1E;
-            --text-main: var(--md-on-surface);
-            --services-bg: #1A1C1E;
-            --card-bg: #23272A;
-            --features-bg: #111416;
-            --contact-bg: linear-gradient(135deg, #001F2A 0%, #000000 100%);
-        }
-    }
-
+    /* Reset y estilos base */
     * {
         margin: 0;
         padding: 0;
@@ -171,15 +105,37 @@ const socialImageURL = new URL(image, Astro.url);
     }
 
     body {
-        font-family: var(--md-font-sans);
+        font-family: var(--font-sans);
         line-height: 1.6;
-        color: var(--text-main);
+        color: var(--text-primary);
         background-color: var(--bg-body);
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    /* Estilos para el enlace "Saltar al contenido" */
+    .skip-link {
+        position: absolute;
+        top: -40px; /* Oculto fuera de la pantalla */
+        left: 0;
+        background: var(--brand-orange);
+        color: #000;
+        padding: 10px 15px;
+        z-index: 9999;
+        transition: top 0.3s ease;
+        font-weight: bold;
+        border-bottom-right-radius: 8px;
+    }
+
+    .skip-link:focus {
+        top: 0; /* Se hace visible al recibir foco */
+        outline: none; /* El estilo ya es suficiente indicación de foco */
+    }
+
+
     h1, h2, h3, h4, h5, h6, .btn {
-        font-family: var(--md-font-condensed);
+        font-family: var(--font-condensed);
         letter-spacing: 0.02em;
+        color: var(--text-primary);
     }
 
     .container {
@@ -188,14 +144,67 @@ const socialImageURL = new URL(image, Astro.url);
         padding: 0 20px;
     }
 
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 50px;
+    /* Efecto de Rayos Global */
+    .storm-effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        mix-blend-mode: screen;
+        overflow: hidden;
     }
 
-    /* Buttons */
+    .lightning {
+        position: absolute;
+        top: -50px;
+        width: 100px;
+        height: 120vh;
+        background: #fff;
+        opacity: 0;
+        clip-path: polygon(48% 0%, 52% 0%, 50% 35%, 60% 35%, 48% 55%, 58% 55%, 45% 100%, 55% 55%, 45% 55%, 55% 35%, 45% 35%);
+        filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #f4e815);
+    }
+
+    .l1 {
+        left: 17%;
+        animation: strike 5s infinite;
+    }
+
+    .l2 {
+        right: 17%;
+        animation: strike 7s infinite 2s;
+        transform: scaleX(-1);
+    }
+
+    .flash {
+        position: absolute;
+        inset: 0;
+        background: white;
+        opacity: 0;
+        animation: ambient-flash 4s infinite;
+    }
+
+    @keyframes strike {
+        0% { opacity: 0; }
+        90% { opacity: 0; }
+        91% { opacity: 1; filter: brightness(2); }
+        92% { opacity: 0; }
+        93% { opacity: 0.8; }
+        94% { opacity: 0; }
+        96% { opacity: 0.5; }
+        100% { opacity: 0; }
+    }
+
+    @keyframes ambient-flash {
+        0%, 92% { opacity: 0; }
+        93% { opacity: 0.08; }
+        96% { opacity: 0; }
+    }
+
+    /* Botones */
     .btn {
         padding: 15px 35px;
         font-size: 1.1rem;
@@ -209,25 +218,25 @@ const socialImageURL = new URL(image, Astro.url);
     }
 
     .btn-primary {
-        background: linear-gradient(135deg, var(--accent) 0%, #FFBA42 100%);
-        color: var(--primary);
-        box-shadow: 0 4px 15px rgba(245, 162, 1, 0.4);
+        background: linear-gradient(135deg, var(--brand-orange) 0%, #FFBA42 100%);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
     }
 
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(245, 162, 1, 0.6);
+        box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
     }
 
     .btn-secondary {
         background: transparent;
-        color: white;
-        border: 2px solid var(--accent-light);
+        color: var(--brand-orange);
+        border: 2px solid var(--brand-orange);
     }
 
     .btn-secondary:hover {
-        background: var(--accent-light);
-        color: var(--primary);
+        background: var(--brand-orange);
+        color: var(--white);
         transform: translateY(-3px);
     }
 
@@ -255,68 +264,5 @@ const socialImageURL = new URL(image, Astro.url);
     .whatsapp-float:hover {
         transform: scale(1.1);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    }
-
-    /* --- ANIMACIÓN DE RAYOS (Pure CSS) --- */
-    .storm-effect {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none; /* IMPORTANTE: Permite hacer clic en los botones debajo */
-        z-index: 50; /* Encima de los fondos, debajo del menú */
-        mix-blend-mode: screen; /* Se fusiona con tus gradientes (negro se vuelve transparente) */
-        overflow: hidden;
-    }
-
-    .lightning {
-        position: absolute;
-        top: -50px;
-        width: 100px;
-        height: 120vh;
-        background: #fff;
-        opacity: 0;
-        /* Forma más fina y afilada */
-        clip-path: polygon(48% 0%, 52% 0%, 50% 35%, 60% 35%, 48% 55%, 58% 55%, 45% 100%, 55% 55%, 45% 55%, 55% 35%, 45% 35%);
-        /* Doble resplandor: uno cian intenso y otro azul profundo para dar volumen */
-        filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #f4e815);
-    }
-
-    .l1 {
-        left: 17%;
-        animation: strike 5s infinite;
-    }
-
-    .l2 {
-        right: 17%;
-        animation: strike 7s infinite 2s;
-        transform: scaleX(-1); /* Invertimos el rayo para que se vea diferente */
-    }
-
-    /* Destello ambiental sutil */
-    .flash {
-        position: absolute;
-        inset: 0;
-        background: white;
-        opacity: 0;
-        animation: ambient-flash 4s infinite;
-    }
-
-    @keyframes strike {
-        0% { opacity: 0; }
-        90% { opacity: 0; }
-        91% { opacity: 1; filter: brightness(2); } /* Destello inicial cegador */
-        92% { opacity: 0; }
-        93% { opacity: 0.8; } /* Réplica fuerte */
-        94% { opacity: 0; }
-        96% { opacity: 0.5; } /* Último chisporroteo */
-        100% { opacity: 0; }
-    }
-
-    @keyframes ambient-flash {
-        0%, 92% { opacity: 0; }
-        93% { opacity: 0.08; } /* Ilumina muy suavemente toda la pantalla */
-        96% { opacity: 0; }
     }
 </style>

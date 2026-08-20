@@ -1,0 +1,8 @@
+---
+// src/components/FaqItem.astro
+const { question } = Astro.props;
+---
+<details class="faq-item">
+    <summary>{question}</summary>
+    <p><slot /></p>
+</details>

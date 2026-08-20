@@ -1,0 +1,11 @@
+---
+// src/components/ServiceCard.astro
+const { icon, title, description, variant = 'default' } = Astro.props;
+---
+<div class={`card ${variant === 'compact' ? 'comp-card' : 'service-card'}`}>
+    <div class="icon-wrap service-icon-wrap">
+        <span class="material-symbols-rounded">{icon}</span>
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+</div>

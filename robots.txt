@@ -1,0 +1,6 @@
+# Permite a todos los crawlers acceder a todo el sitio
+User-agent: *
+Disallow:
+
+# Especifica la ubicación del sitemap
+Sitemap: https://www.domivolt.com/sitemap-index.xml
