@@ -1,0 +1,103 @@
+---
+// src/pages/expertos.astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+
+// 1. Importa el componente <Image> de Astro y tus imágenes
+import { Image } from "astro:assets";
+import profileImage from "../assets/casimiro-oropeza.jpg"; // Reemplaza con la ruta real de tu imagen
+import partnerImage from "../assets/socio-destacado.jpg"; // Reemplaza con la ruta real de tu imagen
+
+import "../styles/pages-expertos.css";
+---
+
+<Layout
+    title="Equipo Experto - DomiVolt"
+    description="Conoce a Casimiro Oropeza, el director técnico detrás de DomiVolt, y al equipo de profesionales que garantizan la seguridad y eficiencia de tus instalaciones eléctricas."
+>
+    <Header variant="simple" />
+
+    <section class="director-profile">
+        <div class="container">
+            <div class="profile-grid">
+                <div class="profile-image-container">
+                    <!-- 2. Reemplaza <img> con <Image> -->
+                    <Image 
+                        src={profileImage}
+                        alt="Casimiro Oropeza, Director Técnico de DomiVolt"
+                        width={350}
+                        height={350}
+                        format="webp"
+                        quality={80}
+                        class="profile-image"
+                    />
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">Casimiro Oropeza</h1>
+                    <p class="profile-bio">
+                        Con más de 5 años de experiencia en el sector eléctrico industrial y residencial, Casimiro lidera DomiVolt con un enfoque en la seguridad, la innovación y la aplicación de normativas internacionales. Su misión es llevar la excelencia de la ingeniería a cada hogar y negocio en Monteagudo.
+                    </p>
+                    <blockquote class="profile-quote">
+                        "La seguridad no es un lujo, es la base de todo trabajo bien hecho. Mi compromiso es que cada cliente sienta la tranquilidad de tener una instalación robusta y confiable."
+                    </blockquote>
+                    <div class="profile-actions">
+                        <a href="/#contacto-domivolt" class="btn btn-gradient">Contactar para un Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section section-grid-bg">
+        <div class="container">
+            <SectionTitle 
+                title="Nuestro Equipo"
+                subtitle="Profesionales dedicados a la excelencia y la seguridad."
+                highlight="Equipo"
+            />
+            <p class="team-intro">
+                Combinamos experiencia técnica con un servicio al cliente excepcional para ofrecerte las mejores soluciones.
+            </p>
+
+            <div class="team-grid">
+                <!-- Tarjeta para el socio destacado -->
+                <div class="card partner-card">
+                    <!-- 3. Usa <Image> también para el socio -->
+                    <Image 
+                        src={partnerImage}
+                        alt="Socio Estratégico de DomiVolt"
+                        width={250}
+                        height={250}
+                        format="webp"
+                        quality={80}
+                        class="partner-photo"
+                    />
+                    <h3>Nombre del Socio</h3>
+                    <p class="team-role">Socio Estratégico / Especialista en Energías Renovables</p>
+                    <p>
+                        Con una visión enfocada en el futuro sostenible, nuestro socio lidera la división de energía solar y autoconsumo, ayudando a nuestros clientes a reducir su huella de carbono y sus facturas de electricidad.
+                    </p>
+                </div>
+
+                <!-- Puedes añadir más miembros del equipo aquí usando el mismo patrón -->
+                <div class="card team-card">
+                    <!-- Para otros miembros, puedes usar un placeholder o sus fotos -->
+                    <img src="https://i.pravatar.cc/120?u=tecnico1" alt="Técnico Especialista" class="team-photo" />
+                    <h3>Juan Torrez</h3>
+                    <p class="team-role">Técnico de Campo</p>
+                    <p>Especialista en diagnósticos rápidos y reparaciones de emergencia. Siempre listo para resolver cualquier problema.</p>
+                </div>
+                <div class="card team-card">
+                    <img src="https://i.pravatar.cc/120?u=tecnico2" alt="Técnico Especialista" class="team-photo" />
+                    <h3>Ana Soliz</h3>
+                    <p class="team-role">Especialista en Redes</p>
+                    <p>Encargada de las instalaciones de cableado estructurado, fibra óptica y sistemas de vigilancia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>

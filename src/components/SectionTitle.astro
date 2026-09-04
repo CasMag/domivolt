@@ -1,0 +1,13 @@
+---
+// src/components/SectionTitle.astro
+const { title, subtitle, highlight } = Astro.props;
+---
+<div class="section-header">
+    <h2 class="section-title" set:html={title.replace(highlight, `<span class="highlight">${highlight}</span>`)} />
+    {subtitle && <p class="section-subtitle">{subtitle}</p>}
+</div>
+
+<style>
+    .section-header { text-align: center; }
+    .section-subtitle { max-width: 600px; margin: 15px auto 50px; font-size: 1.1rem; color: var(--text-secondary); }
+</style>

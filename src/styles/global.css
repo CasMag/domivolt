@@ -1,0 +1,902 @@
+/* ============================================
+   ESTILO GLOBAL - DOMIVOLT
+   Sistema de Diseño con Variables CSS
+   Modo Claro & Oscuro
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+    /* -------- TIPOGRAFÍA -------- */
+    --font-sans: 'Inter', sans-serif;
+    --font-headings: 'Space Grotesk', sans-serif;
+    /* -------- MARCA (COLORES BASE) -------- */
+    --brand-orange: #FF6B00;    /* Logo, iconos, acentos */
+    --brand-dark: #011c30;      /* Fondo oscuro, encabezados */
+    --brand-light: #A8E8F9;     /* Fondo modo claro */
+    --brand-text-dark: #011c30; /* Texto en modo claro */
+    --brand-green-rgb: 0, 189, 104; /* Componentes RGB para usar en rgba() */
+    --brand-green: rgb(var(--brand-green-rgb)); /* Color terciario/éxito */
+    
+    /* -------- MODO CLARO (POR DEFECTO) -------- */
+    /* Fondo y textos principales */
+    --bg-body: #f7fcff; /* Un azul extremadamente claro, casi blanco, para un look limpio */
+    --bg-surface: #ffffff; /* Superficies como secciones destacadas serán blancas puras */
+    --text-primary: var(--brand-text-dark);
+    --text-secondary: #011c30;
+    --text-tertiary: #436b7f;
+    
+    /* Componentes */
+    --header-bg: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para efecto blur */
+    --header-text: var(--text-primary);
+    --mobile-menu-bg: rgba(255, 255, 255, 0.95); /* Fondo claro para el menú móvil */
+    
+    --hero-bg: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(1, 40, 58, 0.05) 100%);
+    --hero-text: var(--text-primary);
+    --hero-accent: var(--brand-orange); /* Mantenemos el acento naranja */
+    
+    --footer-bg: #f0faff; /* Un azul muy claro, casi blanco */
+    --footer-text: var(--text-tertiary);
+    --card-bg: #ffffff;
+    --card-bg-hover: #ffffff;
+    --card-border: rgba(1, 60, 88, 0.1);
+    --card-text: var(--brand-text-dark);
+    --card-subtitle: #436b7f;
+    
+    --button-primary-bg: var(--brand-orange);
+    --button-primary-text: #ffffff; /* Cambiado a blanco para mayor contraste */
+    --button-secondary-border: var(--brand-orange);
+    --button-secondary-text: var(--text-primary); /* Cambiado para mejor contraste */
+    --button-secondary-hover-text: #ffffff;
+    
+    --input-bg: rgba(255, 255, 255, 0.95);
+    --input-text: var(--brand-text-dark);
+    --input-border: rgba(1, 60, 88, 0.2);
+    --input-placeholder: #6a8a9d;
+    
+    --section-bg: #ffffff;
+    --section-title: var(--brand-text-dark);
+    --section-subtitle: #436b7f;
+    
+    --icon-color: var(--brand-orange);
+    --icon-bg: rgba(255, 107, 0, 0.1);
+    
+    --badge-bg: rgba(255, 107, 0, 0.15);
+    --badge-text: var(--brand-text-dark);
+    --badge-border: transparent;
+    
+    --border-color: rgba(1, 60, 88, 0.12);
+    --shadow-light: rgba(1, 60, 88, 0.08);
+    --shadow-medium: rgba(1, 60, 88, 0.12);
+    
+    --partner-card-bg: linear-gradient(160deg, #f0faff 0%, #ffffff 100%);
+    --partner-card-text: var(--text-primary);
+    --partner-card-border: var(--border-color);
+
+    --link-color: var(--brand-orange);
+    --link-hover: #E55A00;
+    --grid-line-color: rgba(1, 60, 88, 0.07);
+    
+    /* -------- ESPACIADO Y FORMAS -------- */
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 28px;
+    --radius-full: 50px;
+    
+    --shadow-sm: 0 2px 4px var(--shadow-light);
+    --shadow-md: 0 4px 8px var(--shadow-medium);
+    --shadow-lg: 0 8px 16px rgba(1, 60, 88, 0.15);
+    --shadow-xl: 0 12px 30px rgba(255, 107, 0, 0.25);
+}
+
+/* -------- MODO OSCURO -------- */
+html.dark {
+        --bg-body: #0f1419;
+        --bg-surface: #191d21;
+        --text-primary: #e1e6eb;
+        --text-secondary: #c5cdd4;
+        --text-tertiary: #aab3bb;
+        
+        --header-bg: rgba(1, 28, 48, 0.8); /* Fondo semitransparente para efecto blur */
+        --header-text: #ffffff;
+        --mobile-menu-bg: rgba(1, 40, 58, 0.95); /* Fondo oscuro para el menú móvil */
+        
+        --hero-bg: linear-gradient(135deg, #001f2a 0%, #000000 100%);
+        --hero-text: #ffffff;
+        --hero-accent: var(--brand-orange);
+        
+        --footer-bg: var(--bg-surface); /* Volvemos al color de superficie para un look más integrado */
+        --footer-text: var(--text-secondary);
+        --card-bg: #011c30; /* Un azul más profundo y alineado a la marca */
+        --card-bg-hover: #013a54;
+        --card-border: rgba(255, 107, 0, 0.15);
+        --card-text: #e1e6eb;
+        --card-subtitle: #aab3bb;
+        
+        --button-primary-bg: var(--brand-orange);
+        --button-primary-text: #ffffff; /* Cambiado a blanco para mayor contraste */
+        --button-secondary-border: var(--brand-orange);
+        --button-secondary-text: var(--brand-orange); /* Se mantiene naranja en modo oscuro */
+        --button-secondary-hover-text: var(--brand-dark); /* Cambiado a casi negro para máximo contraste */
+        
+        --input-bg: rgba(255, 255, 255, 0.08);
+        --input-text: #e1e6eb;
+        --input-border: rgba(255, 107, 0, 0.25);
+        --input-placeholder: #6c7682;
+        
+        --section-bg: #0f1419;
+        --section-title: #e1e6eb;
+        --section-subtitle: #aab3bb;
+        
+        --icon-color: var(--brand-orange);
+        --icon-bg: rgba(255, 107, 0, 0.15);
+        
+        --badge-bg: rgba(255, 107, 0, 0.2);
+        --badge-text: #ffffff;
+        --badge-border: rgba(255, 107, 0, 0.3);
+        
+        --border-color: rgba(255, 107, 0, 0.2);
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-medium: rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 12px 30px rgba(255, 107, 0, 0.35);
+
+        --partner-card-bg: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.15), transparent 40%), linear-gradient(160deg, var(--brand-dark) 0%, #013a54 100%);
+        --partner-card-text: #ffffff;
+        --partner-card-border: rgba(255, 107, 0, 0.2);
+        
+        --link-color: var(--brand-orange);
+        --link-hover: #FFBA42;
+        --grid-line-color: rgba(255, 107, 0, 0.08);
+}
+
+/* ============================================
+   RESET GLOBAL
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    padding-top: 70px; /* Compensa la altura del header fijo */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   HEADER Y NAVEGACIÓN
+   ============================================ */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilos para el logo y su intercambio de tema */
+.logo-link {
+    display: block;
+    height: 40px; /* Ajusta la altura según el tamaño de tu logo */
+    z-index: 1002;
+    transition: transform 0.3s ease;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+}
+
+/* Por defecto (modo claro), mostramos el logo oscuro y ocultamos el claro */
+.logo-dark-version {
+    display: block;
+}
+.logo-light-version {
+    display: none;
+}
+
+/* En modo oscuro, invertimos la visibilidad */
+html.dark .logo-dark-version { display: none; }
+html.dark .logo-light-version { display: block; }
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    margin: 0; /* Eliminamos el 'auto' para corregir la alineación */
+}
+
+.nav-links a {
+    color: var(--header-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-orange);
+}
+
+.hamburger {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background-color: var(--header-text);
+    display: block;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.hamburger.toggle .line-1 {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.toggle .line-2 {
+    opacity: 0;
+}
+
+.hamburger.toggle .line-3 {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
+    /* La propiedad overflow se maneja aquí en lugar de en JS para evitar conflictos de renderizado */
+}
+
+/* Overlay para oscurecer el fondo cuando el menú está abierto */
+body.mobile-menu-open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: rgba(1, 28, 48, 0.6); /* Color oscuro semi-transparente */
+    z-index: 999; /* Justo debajo del menú (z-index: 1000) */
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* Estado por defecto del overlay (oculto) */
+body::before {
+    opacity: 0;
+    pointer-events: none; /* No interfiere con los clics cuando está oculto */
+}
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+/* ============================================
+   CONTENEDOR
+   ============================================ */
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1400px; /* Ancho máximo para el contenido principal */
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Crea un contexto de apilamiento */
+    z-index: 1002;      /* Asegura que esté por encima del menú móvil */
+}
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn,
+button,
+input[type="submit"] {
+    font-family: var(--font-headings);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 15px 35px;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    color: var(--button-secondary-hover-text); /* Añadimos cambio de color de texto para consistencia */
+    will-change: transform, box-shadow;
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--button-secondary-text);
+    border: 2px solid var(--button-secondary-border);
+}
+
+.btn-secondary:hover {
+    background: var(--button-secondary-border);
+    color: var(--button-secondary-hover-text);
+    will-change: transform, background;
+    transform: translateY(-3px);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #FF6B00 0%, #FFA82E 100%);
+    color: #ffffff;
+    border: none;
+    font-family: var(--font-headings);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(255, 107, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    color: var(--brand-text-dark); /* Cambiamos a texto oscuro para mejor contraste en modo claro */
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45);
+}
+
+.btn-accent {
+    /* Hereda padding y estilos base de .btn. Solo define su apariencia única. */
+    background: var(--brand-orange);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-accent:hover {
+    background: var(--link-hover);
+    color: var(--button-secondary-hover-text); /* Aseguramos el cambio de color del texto */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
+}
+
+/* Componente para botones con ícono y texto */
+.btn-icon {
+    display: inline-flex; /* Usamos inline-flex para que se comporte como un botón */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    /* El padding y font-size se heredan de otras clases de botón (.btn, .btn-primary, etc.) */
+}
+
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="phone"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    padding: 12px 16px;
+    border: 2px solid var(--input-border);
+    border-radius: var(--radius-md);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="phone"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--brand-orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   TARJETAS Y CAJAS
+   ============================================ */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    will-change: transform, box-shadow;
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand-orange);
+}
+
+.card h3 {
+    color: var(--card-text);
+}
+
+.card p {
+    color: var(--card-subtitle);
+}
+
+/* ============================================
+   ICONOS Y SÍMBOLOS
+   ============================================ */
+.material-symbols-rounded {
+    font-size: 2.5rem;
+    color: var(--icon-color);
+    transition: all 0.3s ease;
+}
+
+.icon-wrap {
+    width: 60px;
+    height: 60px;
+    background-color: var(--icon-bg);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.3s ease;
+}
+
+.card:hover .icon-wrap {
+    background-color: rgba(255, 107, 0, 0.2);
+    transform: scale(1.1);
+}
+.icon-wrap .material-symbols-rounded {
+    font-size: 2rem;
+}
+
+/* ============================================
+   BADGES Y ETIQUETAS
+   ============================================ */
+.badge {
+    padding: 8px 16px;
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    border: 1px solid var(--badge-border);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+.tertiary-badge {
+    background-color: rgba(var(--brand-green-rgb), 0.15);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   DESTACADOS Y ACENTOS
+   ============================================ */
+.highlight {
+    color: var(--brand-orange);
+    font-weight: 800;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--section-title);
+    margin-bottom: 50px;
+}
+
+.section-grid-bg {
+    background-color: var(--bg-surface);
+    background-image: 
+        linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+/* ============================================
+   TABLAS
+   ============================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+thead {
+    background-color: var(--icon-bg);
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+tr:hover {
+    background-color: var(--shadow-light);
+}
+
+/* ============================================
+   LISTAS
+   ============================================ */
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   CÓDIGO
+   ============================================ */
+code {
+    background-color: var(--shadow-light);
+    color: var(--brand-orange);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: var(--shadow-light);
+    color: var(--text-primary);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* ============================================
+   BARRAS Y DIVISORES
+   ============================================ */
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 2rem 0;
+}
+
+/* ============================================
+   REDES SOCIALES Y FLOTANTES
+   ============================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   EFECTOS DE TORMENTA (Pure CSS)
+   ============================================ */
+.storm-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Lo ponemos detrás del contenido */
+    mix-blend-mode: color-dodge; /* Un modo de fusión que funciona bien en fondos oscuros */
+    overflow: hidden;
+}
+
+.lightning {
+    position: absolute;
+    top: -50px;
+    width: 100px;
+    height: 120vh;
+    background: #fff;
+    opacity: 0;
+    clip-path: polygon(48% 0%, 52% 0%, 50% 35%, 60% 35%, 48% 55%, 58% 55%, 45% 100%, 55% 55%, 45% 55%, 55% 35%, 45% 35%);
+    filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #f4e815);
+}
+
+.l1 {
+    left: 17%;
+    animation: strike 5s infinite;
+}
+
+.l2 {
+    right: 17%;
+    animation: strike 7s infinite 2s;
+    transform: scaleX(-1);
+}
+
+.flash {
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    animation: ambient-flash 4s infinite;
+}
+
+@keyframes strike {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    91% { opacity: 1; filter: brightness(2); }
+    92% { opacity: 0; }
+    93% { opacity: 0.8; }
+    94% { opacity: 0; }
+    96% { opacity: 0.5; }
+    100% { opacity: 0; }
+}
+
+@keyframes ambient-flash {
+    0%, 92% { opacity: 0; }
+    93% { opacity: 0.08; }
+    96% { opacity: 0; }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    /* Ocultamos los enlaces de navegación y mostramos el botón de hamburguesa */
+    .header-container .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+         position: fixed;
+         background: var(--mobile-menu-bg);
+         height: 100vh;
+         width: 100%;
+         top: 0;
+         left: 0;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         transform: translateX(100%);
+         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+         z-index: 1000;
+         gap: 15px;
+    }
+    .nav-links.open {
+        display: flex;
+        transform: translateX(0%);
+    }
+
+    /* Efecto escalonado (stagger) para la aparición de los enlaces */
+    .nav-links.open a:nth-child(1) { transition-delay: 0.15s; }
+    .nav-links.open a:nth-child(2) { transition-delay: 0.20s; }
+    .nav-links.open a:nth-child(3) { transition-delay: 0.25s; }
+    .nav-links.open a:nth-child(4) { transition-delay: 0.30s; }
+    .nav-links.open a:nth-child(5) { transition-delay: 0.35s; }
+    /* Puedes añadir más si tienes más enlaces */
+    .nav-links li { margin: 15px 0; }
+    .nav-links a { font-size: 1.3rem; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    /* Otros ajustes responsive generales */
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .btn,
+    .cta-button,
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Estilos para pantallas aún más pequeñas */
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .btn,
+    .cta-button,
+    button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+}

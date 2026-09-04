@@ -1,102 +1,292 @@
 ---
 const currentYear = new Date().getFullYear();
+
+// Corregimos la ruta de importación de los iconos
+import WhatsAppIcon from './WhatsApp.astro';
+import FacebookIcon from './Facebook.astro';
 ---
 
 <footer>
     <div class="container">
         <div class="footer-content">
             <div class="brand-section">
-                <span class="footer-logo">DomiVolt</span>
-                <p>Soluciones eléctricas domiciliarias seguras y profesionales.</p>
+                <a href="/" class="footer-logo-link" aria-label="DomiVolt - Página de inicio">
+                    <!-- Usamos el sistema de logo dual SVG para máxima calidad -->
+                    <img src="/logo-domivolt-dark.svg" alt="DomiVolt Logo" class="footer-logo-img logo-dark-version" />
+                    <img src="/logo-domivolt-light.svg" alt="DomiVolt Logo" class="footer-logo-img logo-light-version" />
+                    <span class="footer-logo-text">DomiVolt</span>
+                </a>
+                <div class="brand-info">
+                    <p class="footer-tagline">Ingeniería y seguridad eléctrica en Monteagudo.</p>
+                    <div class="law-badge">
+                        <span class="material-symbols-rounded">verified_user</span>
+                        Diagnóstico Ley 2026
+                    </div>
+                </div>
             </div>
-            
-            <div class="social-section">
-                <a href="https://wa.me/59167671818" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="mailto:info@domivolt.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Navegación</h4>
+                <nav class="footer-links" aria-label="Enlaces rápidos">
+                    <a href="/#servicios-electricos">Servicios</a>
+                    <a href="/expertos">Expertos</a>
+                    <a href="/#contacto-domivolt">Presupuesto</a>
+                    <a href="/#preguntas-frecuentes">FAQ</a>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Contacto y Redes</h4>
+                <div class="social-section footer-socials">
+                    <a href="https://wa.me/59167671818" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="social-link social-whatsapp">
+                        <WhatsAppIcon />
+                    </a>
+                    <a href="https://facebook.com/domivolt" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestra página de Facebook" class="social-link social-facebook">
+                        <FacebookIcon />
+                    </a>
+                    <a href="mailto:info@domivolt.com" aria-label="Enviar un correo electrónico" class="social-link social-mail">
+                        <span class="material-symbols-rounded">mail</span>
+                    </a>
+                </div>
             </div>
         </div>
         
         <div class="copyright-section">
-            <p>&copy; {currentYear} DomiVolt. Todos los derechos reservados.</p>
+            <p class="copyright-text">&copy; {currentYear} DomiVolt. Todos los derechos reservados.</p>
+            <div class="footer-legal-links">
+                <a href="/politica-de-privacidad">Política de Privacidad</a>
+            </div>
         </div>
     </div>
 </footer>
 
 <style>
     footer {
-        background: #000000;
-        border-top: 2px solid #14213D;
+        background: var(--footer-bg);
+        border-top: 3px solid var(--brand-orange); /* Borde de acento para un look más pro */
         padding: 50px 0 20px;
-        color: #E5E5E5;
-        margin-top: auto;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
     }
 
     .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: flex-start;
         padding-bottom: 30px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--border-color);
         margin-bottom: 20px;
+        gap: 30px;
+        /* Añadimos un ancho máximo y centramos el grid para alinear con el contenido principal */
+        max-width: 1200px; /* Ancho similar al de otras secciones complejas */
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .footer-logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #FCA311;
-        text-shadow: 0 0 15px rgba(252, 163, 17, 0.3);
-        display: block;
-        margin-bottom: 5px;
+    .footer-logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
     }
 
-    .brand-section p {
-        color: #999;
+    .footer-logo-img {
+        width: 110px;
+        height: auto; /* Altura automática para mantener proporción */
+    }
+
+    .footer-logo-text {
+        font-family: var(--font-headings);
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+    .footer-logo-link:hover {
+        transform: scale(1.05);
+    }
+
+    .brand-info {
+        max-width: 280px; /* Limita el ancho para mejor legibilidad en escritorio */
+    }
+
+    .footer-tagline {
+        color: var(--text-tertiary);
         font-size: 0.95rem;
         margin: 0;
     }
 
-    .social-section {
-        display: flex;
-        gap: 20px;
+    .law-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        color: var(--text-primary);
+        background: var(--badge-bg);
+        border: 1px solid var(--badge-border);
+        padding: 5px 12px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
-    .social-section a {
-        color: #E5E5E5;
-        font-size: 24px;
+    .law-badge .material-symbols-rounded { 
+        font-size: 16px; 
+    }
+
+    .footer-heading {
+        font-family: var(--font-headings);
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--brand-orange);
+        transform: translateY(-2px);
+    }
+    /* Hacemos que la última columna se alinee a la derecha en escritorio */
+    .footer-column:last-of-type {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .footer-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-link {
+        color: var(--text-secondary);
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 45px;
         height: 45px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-md);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
     }
 
-    .social-section a:hover {
-        background: #FCA311;
-        color: #000;
+    .social-link:hover {
         transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Estilos para los iconos SVG */
+    .social-link svg {
+        width: 24px;
+        height: 24px;
+        fill: #ffffff; /* Color por defecto para los iconos */
+    }
+
+    /* Colores de marca originales */
+    .social-whatsapp { background-color: #25D366; }
+    .social-facebook { background-color: #1877F2; }
+    
+    /* El de email puede usar los colores del tema */
+    .social-mail {
+        background-color: var(--icon-bg);
+        color: var(--icon-color);
+    }
+
+    /* Aseguramos que el ícono de email (que no es SVG) se vea bien */
+    .social-mail .material-symbols-rounded {
+        font-size: 24px;
     }
 
     .copyright-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
         text-align: center;
         font-size: 0.9rem;
-        color: #666;
+        color: var(--text-tertiary);
+    }
+
+    .copyright-section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-legal-links a {
+        color: var(--text-tertiary);
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-legal-links a:hover {
+        color: var(--brand-orange);
+        transform: translateY(-2px);
+    }
+
+    /* Clase de utilidad para accesibilidad (si no la tienes globalmente) */
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 
     @media (max-width: 768px) {
+        footer { padding-top: 40px; }
+
         .footer-content {
+            grid-template-columns: 1fr; /* Cada columna ocupa una fila en móvil */
+            text-align: center; /* Centramos el texto de todas las columnas */
+        }
+
+        .brand-section, .brand-info {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+        }
+
+        .footer-logo-link {
             flex-direction: column;
+            display: inline-block; /* Permite que el text-align:center lo centre */
+            gap: 8px;
+        }
+
+        .law-badge {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* En móvil, reseteamos el estilo para que se centre correctamente */
+        .footer-column:last-of-type {
+            margin-left: 0;
             text-align: center;
-            gap: 30px;
+        }
+
+        .footer-links, .footer-socials {
+            justify-content: center; /* Centramos los enlaces de navegación y sociales */
+        }
+
+        .copyright-section {
+            flex-direction: column-reverse; /* Ponemos el copyright debajo de los enlaces legales */
+            justify-content: center;
+            gap: 10px;
         }
     }
 </style>

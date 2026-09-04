@@ -3,10 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-   output: 'static',
-   
-   site:
-   'https://domivolt.pages.dev',
-
-   base:'/'
+  // ¡Esta línea es la más importante!
+  site: 'https://domivolt.com', 
+  integrations: []
 });

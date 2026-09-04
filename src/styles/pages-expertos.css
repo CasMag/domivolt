@@ -1,0 +1,179 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA EXPERTOS.ASTRO
+   ============================================ */
+.director-profile {
+    padding: 100px 20px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.profile-image-container {
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: var(--radius-lg);
+    border: 5px solid var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--border-color);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.profile-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.profile-quote {
+    border-left: 3px solid var(--brand-orange);
+    padding-left: 20px;
+    font-style: italic;
+    color: var(--text-tertiary);
+    margin: 30px 0;
+}
+
+.profile-actions {
+    margin-top: 30px;
+}
+
+/* Sección del Equipo */
+.team-section {
+    padding: 100px 20px;
+}
+
+.team-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -40px auto 50px;
+    font-size: 1.1rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    padding: 30px;
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 0 0 1px var(--border-color);
+}
+
+.team-role {
+    color: var(--brand-orange);
+    font-weight: 700;
+    font-family: var(--font-condensed);
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para la tarjeta destacada del socio */
+.partner-card {
+    grid-column: 1 / -1; /* Ocupa todo el ancho de la rejilla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    
+    /* Estilos usando variables para modo claro/oscuro */
+    background: var(--partner-card-bg);
+    border: 1px solid var(--partner-card-border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 0, 0.1) inset;
+    transition: all 0.4s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 107, 0, 0.2) inset;
+}
+
+.partner-photo {
+    width: 250px; /* Imagen más grande */
+    height: 250px; /* Imagen más grande */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--card-bg);
+}
+/* Aseguramos que el texto sea legible sobre el fondo oscuro */
+.partner-card h3,
+.partner-card p {
+    color: var(--partner-card-text);
+}
+.partner-card .team-role {
+    color: var(--brand-orange); /* El rol sigue destacando en naranja */
+}
+.partner-card p:not(.team-role) {
+    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .profile-name {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .profile-image-container {
+        order: -1;
+    }
+
+    .partner-card {
+        padding: 30px 20px; /* Reducimos el padding en móviles */
+    }
+
+    .partner-photo {
+        width: 180px; /* Hacemos la imagen un poco más pequeña */
+        height: 180px;
+        margin: 0 auto 20px; /* Aseguramos el centrado horizontal */
+    }
+}
+
+/* ============================================
+   ESTILO LLAMATIVO PARA BOTÓN DE CONTACTO
+   ============================================ */
+.profile-actions .btn.btn-gradient {
+    /* Hereda de .btn-gradient, solo añadimos especificidades si es necesario */
+    padding: 15px 40px;
+    font-size: 1rem;
+}
+
+.profile-actions .btn.btn-gradient:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.profile-actions .btn:active {
+    transform: translateY(-1px);
+}
