@@ -89,7 +89,7 @@
 .team-role {
     color: var(--brand-orange);
     font-weight: 700;
-    font-family: var(--font-condensed);
+    font-family: var(--font-headings);
     margin-top: -10px;
     margin-bottom: 15px;
 }
@@ -162,18 +162,8 @@
 }
 
 /* ============================================
-   ESTILO LLAMATIVO PARA BOTÓN DE CONTACTO
+   BOTÓN DE CONTACTO
    ============================================ */
-.profile-actions .btn.btn-gradient {
-    /* Hereda de .btn-gradient, solo añadimos especificidades si es necesario */
-    padding: 15px 40px;
-    font-size: 1rem;
-}
-
-.profile-actions .btn.btn-gradient:hover {
-    transform: translateY(-4px) scale(1.02);
-}
-
 .profile-actions .btn:active {
     transform: translateY(-1px);
 }

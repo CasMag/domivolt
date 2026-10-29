@@ -101,7 +101,7 @@ html.dark .emergency-badge {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
     margin: 40px 0;
 }
@@ -149,8 +149,8 @@ html.dark .emergency-badge {
 
 .service-card .btn-secondary {
     /* Estilos para el botón dentro de la tarjeta */
-    padding: 8px 20px;
-    font-size: 0.9rem;
+    padding: 12px 24px;
+    font-size: 1rem;
     align-self: flex-start; /* Alinea el botón a la izquierda */
     margin-top: auto; /* Empuja el botón al final de la tarjeta */
 }
@@ -581,7 +581,7 @@ html.dark .emergency-badge {
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -825,13 +825,21 @@ html.dark .emergency-badge {
 .form-submit-btn {
     /* Ajustes específicos para el botón de envío. Hereda colores y estilos base. */
     display: flex; /* Asegura la alineación del ícono y el texto */
+    align-items: center; /* Centra verticalmente el ícono con el texto */
     justify-content: center; /* Centra el contenido */
     width: 100%;
     margin-top: 8px;
     padding: 14px 24px; /* Devolvemos un padding específico para este botón */
     gap: 10px; /* Añadimos el espacio entre el ícono y el texto */
-    border-radius: 8px;
+    border-radius: var(--radius-btn);
     font-size: 0.95rem;
+    line-height: 1;
+}
+
+/* El ícono hereda 2.5rem de la regla global; lo ajustamos al tamaño del texto */
+.form-submit-btn .material-symbols-rounded {
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 .field-wrap .is-invalid {
@@ -908,8 +916,8 @@ html.dark .emergency-badge {
     }
 
     .cta-button {
-        padding: 10px 24px;
-        font-size: 0.9rem;
+        padding: 12px 28px;
+        font-size: 1rem;
     }
 
     .hero h1 {
@@ -936,8 +944,8 @@ html.dark .emergency-badge {
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        padding: 12px 24px;
+        font-size: 1rem;
     }
 
     .services,
@@ -1014,7 +1022,56 @@ html.dark .emergency-badge {
         gap: 30px;
     }
 
-    .features-number {
+    .feature-number {
         font-size: 2.5rem;
+    }
+}
+
+/* Teléfonos pequeños (≤480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 16px 64px;
+    }
+
+    .hero h1 {
+        font-size: 1.55rem;
+        min-height: 0;
+    }
+
+    .hero-container {
+        padding: 16px 8px;
+    }
+
+    .services,
+    .complementary-services,
+    .modernization,
+    .commitment,
+    .features,
+    .faq,
+    .testimonials,
+    .contact-section {
+        padding: 48px 16px;
+    }
+
+    .section-h2 {
+        font-size: 1.5rem;
+    }
+
+    .modern-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-form-pro {
+        padding: 20px 16px;
+    }
+
+    .saving-card {
+        padding: 24px 16px;
+    }
+
+    .contact-ways,
+    .commitment-grid,
+    .features-grid {
+        gap: 16px;
     }
 }
