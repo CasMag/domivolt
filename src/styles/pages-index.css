@@ -909,13 +909,16 @@ html.dark .emergency-badge {
 /* ============================================
    ANIMATIONS
    ============================================ */
-.reveal {
+/* Mejora progresiva: el contenido solo se oculta si JavaScript está activo
+   (la clase `js` la añade un script en Layout.astro). Sin JS, el contenido
+   queda siempre visible para buscadores, asistentes de IA y lectores de texto. */
+html.js .reveal {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1.2s cubic-bezier(0.5, 0, 0, 1), transform 1.2s cubic-bezier(0.5, 0, 0, 1);
 }
 
-.reveal.active {
+html.js .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }

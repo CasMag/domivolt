@@ -108,6 +108,13 @@ function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal');
     if (!revealElements.length) return;
 
+    // Resguardo: si el navegador no soporta IntersectionObserver, mostramos el
+    // contenido directamente en lugar de dejarlo oculto.
+    if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(el => el.classList.add('active'));
+        return;
+    }
+
     const observerOptions = {
         threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'

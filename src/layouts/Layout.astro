@@ -54,6 +54,10 @@ const structuredData = {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mejora progresiva: marca que JS está activo. Las animaciones de entrada
+         (.reveal) solo ocultan contenido cuando existe esta clase; sin JS el
+         contenido permanece visible para buscadores y lectores automáticos. -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <meta name="description" content={description}>
     <meta name="generator" content={Astro.generator} />
 
