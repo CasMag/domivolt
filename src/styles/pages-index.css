@@ -840,7 +840,12 @@ html.dark .emergency-badge {
 }
 
 .form-submit-btn {
-    /* Ajustes específicos para el botón de envío. Hereda colores y estilos base. */
+    /* Apariencia de CTA principal. Antes no definía fondo ni color y quedaba
+       con el estilo por defecto del navegador (blanco), sin resaltar. */
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: 0 4px 15px rgba(194, 65, 12, 0.35);
+
     display: flex; /* Asegura la alineación del ícono y el texto */
     align-items: center; /* Centra verticalmente el ícono con el texto */
     justify-content: center; /* Centra el contenido */
@@ -853,10 +858,21 @@ html.dark .emergency-badge {
     line-height: 1;
 }
 
-/* El ícono hereda 2.5rem de la regla global; lo ajustamos al tamaño del texto */
+/* Mayor especificidad que .reveal.active (2 clases) para permitir el realce al pasar el mouse */
+.contact-form-pro .form-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+}
+
+.contact-form-pro .form-submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* El ícono hereda 2.5rem y color naranja de la regla global; lo ajustamos al botón */
 .form-submit-btn .material-symbols-rounded {
     font-size: 1.25rem;
     line-height: 1;
+    color: inherit; /* Evita un ícono naranja sobre fondo naranja */
 }
 
 .field-wrap .is-invalid {
