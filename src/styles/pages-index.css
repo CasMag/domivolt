@@ -163,6 +163,13 @@ html.dark .emergency-badge {
     color: var(--button-secondary-hover-text);
 }
 
+/* Contenedor del botón "Ver Servicios Especializados".
+   Centra el botón en todas las resoluciones (incluido móvil). */
+.services-action {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* ============================================
    COMPLEMENTARY SERVICES SECTION
    ============================================ */
@@ -619,11 +626,21 @@ html.dark .emergency-badge {
     align-items: center;
 }
 
-.client-photo {
+/* Avatar con iniciales para los testimonios (evita fotos genéricas) */
+.client-avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--button-primary-bg);
+    color: #ffffff;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
 }
 
 .client-info strong {

@@ -21,6 +21,32 @@ const {
 
 // Aseguramos que la imagen tenga una URL absoluta para que las redes sociales la muestren correctamente
 const socialImageURL = new URL(image, Astro.url);
+
+// Datos estructurados (Schema.org) para el SEO local del negocio
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Electrician",
+	"name": "DomiVolt",
+	"image": socialImageURL.href,
+	"url": Astro.url.origin,
+	"telephone": "+59167671818",
+	"email": "info@domivolt.com",
+	"priceRange": "$$",
+	"areaServed": { "@type": "City", "name": "Monteagudo" },
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Monteagudo",
+		"addressRegion": "Chuquisaca",
+		"addressCountry": "BO"
+	},
+	"openingHoursSpecification": {
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+		"opens": "00:00",
+		"closes": "23:59"
+	},
+	"sameAs": ["https://facebook.com/domivolt"]
+};
 ---
 
 <!DOCTYPE html>
@@ -48,6 +74,10 @@ const socialImageURL = new URL(image, Astro.url);
     <meta property="twitter:image" content={socialImageURL} />
 
     <title>{title}</title>
+
+    <!-- Datos estructurados para SEO local -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
     <!-- Favicon Multi-navegador -->
     <link rel="icon" type="image/png" href={favicon} />
     <link rel="shortcut icon" href={favicon} type="image/png" />
