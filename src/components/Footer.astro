@@ -18,6 +18,10 @@ import FacebookIcon from './Facebook.astro';
                 </a>
                 <div class="brand-info">
                     <p class="footer-tagline">Ingeniería y seguridad eléctrica en Monteagudo.</p>
+                    <p class="footer-hours">
+                        <span class="material-symbols-rounded">schedule</span>
+                        Lun a Vie: 8:30 – 19:00 · Emergencias 24/7
+                    </p>
                     <div class="law-badge">
                         <span class="material-symbols-rounded">verified_user</span>
                         Diagnóstico Ley de Energías Renovables
@@ -114,6 +118,19 @@ import FacebookIcon from './Facebook.astro';
         color: var(--text-tertiary);
         font-size: 0.95rem;
         margin: 0;
+    }
+
+    .footer-hours {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin: 8px 0 0;
+    }
+
+    .footer-hours .material-symbols-rounded {
+        font-size: 18px;
     }
 
     .law-badge {
